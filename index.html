@@ -1,0 +1,993 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#102b27">
+<meta name="description" content="Kapitalanlage-Check: Immobilien als Kapitalanlage, Vermögensaufbau und steuerliche Möglichkeiten mit Mathias Radseck.">
+<title>Kapitalanlage-Check | Mathias Radseck</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --dark:#102b27;
+  --green:#1c4238;
+  --gold:#c6a56e;
+  --cream:#f7f5f0;
+  --white:#fff;
+  --text:#253830;
+  --muted:#65756e;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--text);
+  font-family:"DM Sans",Arial,sans-serif;
+  line-height:1.7;
+}
+h1,h2,h3{
+  font-family:"Playfair Display",Georgia,serif;
+  font-weight:500;
+  line-height:1.2;
+}
+h1{font-size:clamp(42px,5.5vw,76px)}
+h2{font-size:clamp(32px,4vw,52px)}
+h3{font-size:25px}
+p{margin:0 0 20px}
+a{text-decoration:none;color:inherit}
+img{display:block;width:100%}
+button,input,select,textarea{font:inherit}
+.container{width:min(1160px,90%);margin:auto}
+section{padding:95px 0}
+.eyebrow{
+  color:var(--gold);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+.btn{
+  display:inline-block;
+  padding:15px 25px;
+  background:var(--gold);
+  color:var(--dark);
+  border:1px solid var(--gold);
+  border-radius:3px;
+  font-size:14px;
+  font-weight:700;
+  cursor:pointer;
+  transition:.2s;
+}
+.btn:hover{background:#e1c38c;transform:translateY(-2px)}
+.btn-outline{background:transparent;color:white;border-color:#ffffff80}
+.btn-outline:hover{background:#ffffff17}
+.section-head{
+  max-width:750px;
+  text-align:center;
+  margin:0 auto 45px;
+}
+.section-head p{color:var(--muted)}
+
+/* NAVIGATION */
+nav{
+  background:var(--dark);
+  color:white;
+  position:sticky;
+  top:0;
+  z-index:20;
+  border-bottom:1px solid #ffffff25;
+}
+.nav-inner{
+  min-height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.logo{font:22px Georgia,serif;white-space:nowrap}
+.logo span{color:var(--gold)}
+.nav-links{
+  display:flex;
+  gap:24px;
+  align-items:center;
+  font-size:13px;
+}
+.nav-links a:hover{color:var(--gold)}
+.linkedin{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:35px;
+  height:35px;
+  border-radius:4px;
+  background:#0a66c2;
+  color:white!important;
+  font:bold 19px Arial,sans-serif;
+}
+
+/* HERO */
+.hero{
+  background:var(--dark);
+  color:white;
+  position:relative;
+  overflow:hidden;
+  padding:105px 0 115px;
+}
+.hero:before{
+  content:"";
+  position:absolute;
+  right:-190px;
+  top:-220px;
+  width:650px;
+  height:650px;
+  border:1px solid #c6a56e35;
+  border-radius:50%;
+  box-shadow:0 0 0 90px #c6a56e08,0 0 0 180px #c6a56e05;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  align-items:center;
+  gap:70px;
+  position:relative;
+}
+.hero h1{margin:20px 0}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero-lead{font-size:18px;color:#d2ddd6;max-width:560px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.hero-stats{
+  display:flex;
+  gap:40px;
+  margin-top:52px;
+  padding-top:25px;
+  border-top:1px solid #ffffff27;
+}
+.stat strong{
+  display:block;
+  font:29px Georgia,serif;
+  color:var(--gold);
+}
+.stat small{color:#b6c9bf;font-size:12px}
+.portrait-wrap{position:relative;max-width:430px;margin:auto}
+.portrait{
+  height:480px;
+  object-fit:cover;
+  object-position:center 25%;
+  background:var(--green);
+  border-radius:220px 220px 5px 5px;
+  border:6px solid #ffffff15;
+}
+.portrait-frame{
+  position:absolute;
+  inset:15px -15px -15px 15px;
+  border:1px solid var(--gold);
+  border-radius:220px 220px 5px 5px;
+  pointer-events:none;
+}
+.nameplate{
+  position:absolute;
+  left:-25px;
+  bottom:25px;
+  padding:17px 24px;
+  background:var(--cream);
+  color:var(--text);
+  box-shadow:0 12px 30px #0003;
+}
+.nameplate strong{display:block}
+.nameplate small{font-size:12px;color:var(--muted)}
+
+/* TRUST */
+.trust{
+  padding:25px 0;
+  background:#eae6dc;
+}
+.trust-inner{
+  display:flex;
+  justify-content:space-around;
+  gap:20px;
+  flex-wrap:wrap;
+  color:var(--green);
+  font-size:13px;
+  font-weight:700;
+}
+
+/* BENEFITS */
+.benefits{background:white}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{
+  padding:36px;
+  background:var(--cream);
+  border:1px solid #e7e4dc;
+  transition:.25s;
+}
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 15px 35px #102b2712;
+}
+.card-number{color:#a68a58;letter-spacing:2px;font-size:12px}
+.card h3{margin:20px 0}
+.card p{color:var(--muted);font-size:14px}
+
+/* PROPERTIES */
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.property{
+  min-height:325px;
+  position:relative;
+  overflow:hidden;
+  background:#d9d9d4;
+}
+.property:first-child{grid-row:span 2;min-height:670px}
+.property img{
+  position:absolute;
+  inset:0;
+  height:100%;
+  object-fit:cover;
+  transition:.5s;
+}
+.property:hover img{transform:scale(1.05)}
+.property:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(transparent 40%,#000b);
+}
+.property-label{
+  position:absolute;
+  bottom:23px;
+  left:25px;
+  color:white;
+  z-index:1;
+}
+.property-label small{letter-spacing:2px;font-size:11px;color:#ead6b5}
+.property-label h3{margin:5px 0}
+.photo-note{text-align:center;color:var(--muted);font-size:12px;margin-top:25px}
+
+/* ABOUT */
+.about{background:white}
+.about-grid{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  align-items:center;
+  gap:85px;
+}
+.about-image{
+  height:470px;
+  background:#eae6dc;
+  overflow:hidden;
+}
+.about-image img{
+  height:100%;
+  object-fit:cover;
+  object-position:center 20%;
+}
+.about-text p{color:var(--muted)}
+.quote{
+  border-left:3px solid var(--gold);
+  padding:15px 0 15px 25px;
+  margin:28px 0;
+  color:var(--dark);
+  font:21px/1.5 Georgia,serif;
+}
+
+/* CALCULATOR */
+.calculator{background:var(--dark);color:white}
+.calculator .section-head p{color:#c6d3ca}
+.calc-grid{
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:65px;
+  align-items:start;
+}
+.calc-form{
+  background:white;
+  color:var(--text);
+  padding:32px;
+  border-radius:4px;
+}
+.field{margin-bottom:17px}
+.field label{display:block;font-size:13px;font-weight:700;margin-bottom:6px}
+.field input{
+  width:100%;
+  padding:12px 14px;
+  border:1px solid #d8ddd8;
+  border-radius:3px;
+  outline:none;
+}
+.field input:focus{border-color:var(--gold)}
+.results{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:27px}
+.result{padding:22px;border:1px solid #ffffff40}
+.result span{display:block;font-size:12px;color:#c5d4c9}
+.result strong{
+  display:block;
+  font-size:clamp(22px,2.5vw,30px);
+  color:var(--gold);
+  margin-top:8px;
+}
+.result.wide{grid-column:span 2}
+.note{font-size:12px;color:#bbcbc0;margin-top:20px}
+
+/* TAX */
+.tax{background:white}
+.tax-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:75px;
+}
+.tax-figure{
+  text-align:center;
+  background:var(--cream);
+  border:1px solid #e6e2d8;
+  padding:65px 35px;
+}
+.tax-figure strong{
+  display:block;
+  color:var(--dark);
+  font:90px Georgia,serif;
+}
+.tax-figure span{font-size:14px;color:var(--muted)}
+.tax-text p{color:var(--muted)}
+.tax-info{
+  background:var(--cream);
+  padding:20px;
+  font-size:13px;
+  border-left:3px solid var(--gold);
+}
+
+/* PROCESS */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.step{border-top:2px solid var(--gold);padding-top:25px}
+.step-num{font:43px Georgia,serif;color:#baa071}
+.step p{font-size:14px;color:var(--muted)}
+
+/* CONTACT */
+.contact{background:var(--dark);color:white}
+.contact-grid{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:75px;
+  align-items:start;
+}
+.contact-intro p{color:#d0ded4}
+.contact-form{
+  background:white;
+  color:var(--text);
+  padding:38px;
+  border-radius:4px;
+}
+.contact-form input,
+.contact-form select,
+.contact-form textarea{
+  width:100%;
+  padding:13px 14px;
+  border:1px solid #d7ddd7;
+  border-radius:3px;
+  background:white;
+  color:var(--text);
+}
+.contact-form textarea{min-height:100px;resize:vertical}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.form-note{font-size:12px;color:var(--muted)}
+.contact-form button:disabled{
+  opacity:.65;
+  cursor:not-allowed;
+  transform:none;
+}
+
+/* FOOTER */
+footer{background:#091b18;color:#bfcec4;padding:45px 0}
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.footer-links{display:flex;gap:22px;font-size:12px}
+footer small{font-size:12px;color:#a2b5a7}
+footer a:hover{color:var(--gold)}
+
+@media(max-width:900px){
+  section{padding:70px 0}
+  .hero-grid,.about-grid,.calc-grid,.tax-grid,.contact-grid{
+    grid-template-columns:1fr;
+    gap:45px;
+  }
+  .hero-grid{text-align:center}
+  .hero-lead{margin-left:auto;margin-right:auto}
+  .hero-actions,.hero-stats{justify-content:center}
+  .portrait-wrap{max-width:360px}
+  .cards,.steps{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr}
+  .property,.property:first-child{min-height:340px;grid-row:auto}
+  .nav-links a:not(.linkedin):not(.nav-cta){display:none}
+}
+@media(max-width:550px){
+  .logo{font-size:18px}
+  .nav-cta{display:none}
+  .hero{padding:65px 0}
+  .hero-stats{gap:20px}
+  .portrait{height:380px}
+  .nameplate{left:0}
+  .form-row,.results{grid-template-columns:1fr}
+  .result.wide{grid-column:span 1}
+  .calc-form,.contact-form{padding:23px}
+  .tax-figure strong{font-size:65px}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a class="logo" href="#start">KAPITALANLAGE<span>CHECK</span></a>
+    <div class="nav-links">
+      <a href="#vorteile">Vorteile</a>
+      <a href="#immobilien">Immobilien</a>
+      <a href="#ueber-mich">Über mich</a>
+      <a href="#rechner">Rechner</a>
+      <a href="#kontakt" class="nav-cta">Kontakt</a>
+      <a class="linkedin"
+         href="https://www.linkedin.com/in/mathiasradseck/"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="LinkedIn-Profil von Mathias Radseck">in</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<section class="hero" id="start">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">Immobilien · Vermögen · Perspektiven</div>
+      <h1>Vermögen aufbauen. <em>Chancen erkennen.</em> Zukunft gestalten.</h1>
+      <p class="hero-lead">
+        Immobilien als Kapitalanlage können interessante
+        Möglichkeiten für den langfristigen Vermögensaufbau,
+        laufende Mieteinnahmen und steuerliche Vorteile bieten.
+      </p>
+      <p class="hero-lead">
+        Ich begleite Sie persönlich auf dem Weg zu einer
+        passenden Immobilienkapitalanlage.
+      </p>
+      <div class="hero-actions">
+        <a class="btn" href="#kontakt">Persönlichen Check anfragen →</a>
+        <a class="btn btn-outline" href="#ueber-mich">Mehr über mich</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <strong>Fast 500</strong>
+          <small>begleitete Kunden*</small>
+        </div>
+        <div class="stat">
+          <strong>10 Jahre</strong>
+          <small>steuerlich relevante Haltefrist</small>
+        </div>
+        <div class="stat">
+          <strong>Persönlich</strong>
+          <small>individuelle Begleitung</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="portrait-wrap">
+      <img class="portrait"
+           src="portrait.jpg"
+           alt="Mathias Radseck">
+      <div class="portrait-frame"></div>
+      <div class="nameplate">
+        <strong>Mathias Radseck</strong>
+        <small>Ihr persönlicher Ansprechpartner</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="container trust-inner">
+    <span>◆ Persönliche Begleitung</span>
+    <span>◆ Individuelle Prüfung</span>
+    <span>◆ Langfristiger Vermögensaufbau</span>
+    <span>◆ Transparente Beispiele</span>
+  </div>
+</div>
+
+<section class="benefits" id="vorteile">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Warum Immobilien?</div>
+      <h2>Eine Investition. Mehrere Perspektiven.</h2>
+      <p>Eine gut ausgewählte Kapitalanlageimmobilie kann unterschiedliche finanzielle Ziele unterstützen.</p>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <span class="card-number">01 / EINNAHMEN</span>
+        <h3>Regelmäßige Mieteinnahmen</h3>
+        <p>
+          Mieterträge können zur Finanzierung beitragen und
+          langfristig zusätzliche Einnahmen ermöglichen.
+          Leerstand und Bewirtschaftungskosten sind einzukalkulieren.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="card-number">02 / STEUERN</span>
+        <h3>Steuerliche Möglichkeiten</h3>
+        <p>
+          Abschreibungen, Finanzierungszinsen und weitere
+          abzugsfähige Aufwendungen können je nach
+          persönlicher Situation steuerliche Vorteile bieten.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="card-number">03 / VERMÖGEN</span>
+        <h3>Langfristiger Vermögensaufbau</h3>
+        <p>
+          Tilgung und eine mögliche Wertentwicklung können
+          zum Vermögensaufbau beitragen. Wertsteigerungen
+          sind allerdings nicht garantiert.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="immobilien">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Immobilienwelten</div>
+      <h2>Werte, die man sehen kann.</h2>
+      <p>
+        Unterschiedliche Wohnimmobilien eröffnen
+        unterschiedliche Möglichkeiten.
+        Standort, Objektqualität und Wirtschaftlichkeit
+        stehen dabei im Mittelpunkt.
+      </p>
+    </div>
+
+    <div class="gallery">
+      <div class="property">
+        <img loading="lazy"
+             src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85"
+             alt="Wohnimmobilie, illustrative Aufnahme">
+        <div class="property-label">
+          <small>BEISPIELAUFNAHME</small>
+          <h3>Moderne Wohnimmobilien</h3>
+        </div>
+      </div>
+
+      <div class="property">
+        <img loading="lazy"
+             src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1000&q=85"
+             alt="Modernes Wohnkonzept, illustrative Aufnahme">
+        <div class="property-label">
+          <small>BEISPIELAUFNAHME</small>
+          <h3>Hochwertige Wohnkonzepte</h3>
+        </div>
+      </div>
+
+      <div class="property">
+        <img loading="lazy"
+             src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85"
+             alt="Architektur, illustrative Aufnahme">
+        <div class="property-label">
+          <small>BEISPIELAUFNAHME</small>
+          <h3>Immobilien mit Perspektive</h3>
+        </div>
+      </div>
+    </div>
+
+    <p class="photo-note">
+      Die Fotos dienen ausschließlich als illustrative Designbeispiele
+      und zeigen keine konkret angebotenen Immobilien.
+    </p>
+  </div>
+</section>
+
+<section class="about" id="ueber-mich">
+  <div class="container about-grid">
+    <div class="about-image">
+      <img loading="lazy" src="portrait.jpg" alt="Mathias Radseck">
+    </div>
+
+    <div class="about-text">
+      <div class="eyebrow">Ihr Ansprechpartner</div>
+      <h2>Erfahrung schafft Vertrauen.</h2>
+      <p>
+        Mein Name ist <strong>Mathias Radseck</strong>.
+        In meiner bisherigen Tätigkeit im Bereich
+        Kapitalanlageimmobilien habe ich fast 500 Kunden
+        auf ihrem Weg zur Immobilienkapitalanlage begleitet.
+      </p>
+      <p>
+        Eine Immobilieninvestition ist weit mehr als eine
+        Entscheidung über Kaufpreis und Quadratmeter.
+        Es geht um finanzielle Möglichkeiten, persönliche
+        Ziele und eine durchdachte langfristige Strategie.
+      </p>
+
+      <div class="quote">
+        „Eine gute Kapitalanlage beginnt nicht mit einer Immobilie,
+        sondern mit dem Verständnis für Ihre persönlichen Ziele.“
+      </div>
+
+      <p>
+        Mein Anspruch ist eine persönliche Begleitung,
+        verständliche Informationen und eine nachvollziehbare
+        Betrachtung von Chancen und Risiken.
+      </p>
+
+      <a class="btn"
+         href="https://www.linkedin.com/in/mathiasradseck/"
+         target="_blank"
+         rel="noopener noreferrer">
+         Mein LinkedIn-Profil ansehen ↗
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="calculator" id="rechner">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Zahlen verstehen</div>
+      <h2>Was könnte Ihre Immobilie erwirtschaften?</h2>
+      <p>
+        Dieser Rechner zeigt beispielhaft Mieteinnahmen,
+        Bruttomietrendite und eine mögliche Wertentwicklung.
+      </p>
+    </div>
+
+    <div class="calc-grid">
+      <div class="calc-form">
+        <h3>Ihr Rechenbeispiel</h3>
+
+        <div class="field">
+          <label for="price">Immobilienkaufpreis (€)</label>
+          <input type="number" id="price" value="250000" min="1" step="1000">
+        </div>
+
+        <div class="field">
+          <label for="rent">Monatliche Kaltmiete (€)</label>
+          <input type="number" id="rent" value="850" min="0" step="10">
+        </div>
+
+        <div class="field">
+          <label for="equity">Eigenkapital (€)</label>
+          <input type="number" id="equity" value="50000" min="0" step="1000">
+        </div>
+
+        <div class="field">
+          <label for="growth">Angenommene Wertentwicklung pro Jahr (%)</label>
+          <input type="number" id="growth" value="2" min="-20" max="20" step="0.5">
+        </div>
+
+        <button class="btn" type="button" onclick="calculate()">
+          Beispiel berechnen →
+        </button>
+      </div>
+
+      <div>
+        <div class="eyebrow">Ihre Beispielauswertung</div>
+        <h2>Die Zahlen im Überblick.</h2>
+        <p style="color:#c5d3cb">
+          Die Ergebnisse sind bewusst vereinfacht und
+          dienen nur zur ersten Orientierung.
+        </p>
+
+        <div class="results" aria-live="polite">
+          <div class="result">
+            <span>Jährliche Kaltmiete</span>
+            <strong id="annualRent">10.200 €</strong>
+          </div>
+
+          <div class="result">
+            <span>Bruttomietrendite</span>
+            <strong id="yieldResult">4,08 %</strong>
+          </div>
+
+          <div class="result">
+            <span>Rechnerischer Kaufpreis nach 10 Jahren</span>
+            <strong id="futureValue">304.749 €</strong>
+          </div>
+
+          <div class="result">
+            <span>Rechnerische Wertveränderung</span>
+            <strong id="increase">54.749 €</strong>
+          </div>
+
+          <div class="result wide">
+            <span>Summe der Kaltmieten in 10 Jahren bei unveränderter Miete</span>
+            <strong id="totalRent">102.000 €</strong>
+          </div>
+        </div>
+
+        <p class="note">
+          Wichtig: Keine Berücksichtigung von Erwerbsnebenkosten,
+          Zinsen, Tilgung, Instandhaltung, Leerstand, Verwaltung,
+          Steuern, Verkaufskosten oder Mietänderungen.
+          Das Eigenkapital beeinflusst daher die hier gezeigten
+          Kennzahlen nicht. Die angenommene Wertentwicklung
+          ist keine Prognose. Eine vollständige
+          Investitionsrechnung kann deutlich anders ausfallen.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tax" id="steuern">
+  <div class="container tax-grid">
+    <div class="tax-figure">
+      <div class="eyebrow">Langfristige Perspektive</div>
+      <strong>10+</strong>
+      <span>Jahre zwischen Anschaffung und Veräußerung</span>
+      <p style="margin-top:25px;color:var(--muted)">
+        Ein möglicher steuerlicher Vorteil bei
+        privat gehaltenen Immobilien.
+      </p>
+    </div>
+
+    <div class="tax-text">
+      <div class="eyebrow">Steuerliche Perspektiven</div>
+      <h2>Ein besonders interessanter Aspekt nach zehn Jahren.</h2>
+
+      <p>
+        Bei einer privat gehaltenen Immobilie kann ein
+        Veräußerungsgewinn nach Ablauf der gesetzlichen
+        Zehnjahresfrist grundsätzlich einkommensteuerfrei sein.
+      </p>
+
+      <p>
+        Entscheidend ist insbesondere, dass zwischen
+        Anschaffung und Verkauf mehr als zehn Jahre liegen
+        und keine abweichenden steuerlichen Regelungen greifen.
+      </p>
+
+      <div class="tax-info">
+        <strong>Wichtiger Hinweis:</strong><br>
+        Die Regelung ergibt sich aus § 23 EStG.
+        Ausnahmen sind möglich, insbesondere beim
+        gewerblichen Grundstückshandel oder Betriebsvermögen.
+        Die persönliche Situation sollte steuerlich
+        geprüft werden.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ablauf">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Der Weg zur Kapitalanlage</div>
+      <h2>Einfach. Persönlich. Verständlich.</h2>
+      <p>In drei Schritten zu einer ersten Einschätzung Ihrer Möglichkeiten.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <span class="step-num">01</span>
+        <h3>Interesse anmelden</h3>
+        <p>
+          Sie nehmen unverbindlich Kontakt auf und schildern,
+          welche Ziele Sie mit einer Immobilienkapitalanlage verfolgen.
+        </p>
+      </div>
+
+      <div class="step">
+        <span class="step-num">02</span>
+        <h3>Möglichkeiten prüfen</h3>
+        <p>
+          Wir besprechen gemeinsam, welche Rahmenbedingungen
+          und Anlagekonzepte grundsätzlich zu Ihnen passen könnten.
+        </p>
+      </div>
+
+      <div class="step">
+        <span class="step-num">03</span>
+        <h3>Perspektiven entwickeln</h3>
+        <p>
+          Auf dieser Grundlage können passende
+          Immobilienmöglichkeiten und ihre Wirtschaftlichkeit
+          näher betrachtet werden.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="kontakt">
+  <div class="container contact-grid">
+    <div class="contact-intro">
+      <div class="eyebrow">Persönlicher Kontakt</div>
+      <h2>Welche Möglichkeiten passen zu Ihnen?</h2>
+      <p>
+        Lassen Sie uns gemeinsam einen ersten Blick
+        auf Ihre Ziele und Möglichkeiten werfen.
+      </p>
+      <p>
+        Eine unverbindliche Kontaktaufnahme ist der
+        erste Schritt zu einer fundierten Einschätzung.
+      </p>
+
+      <h3>Mathias Radseck</h3>
+      <p>
+        Kapitalanlage-Check<br>
+        Schackstr. 18<br>
+        29221 Celle
+      </p>
+
+      <a class="btn btn-outline"
+         href="https://www.linkedin.com/in/mathiasradseck/"
+         target="_blank"
+         rel="noopener noreferrer">
+         Auf LinkedIn vernetzen ↗
+      </a>
+    </div>
+
+    <div class="contact-form">
+      <h3>Kapitalanlage-Check anfragen</h3>
+      <p class="form-note">
+        Vorschau des geplanten Kontaktformulars.
+        Der Versand wird vor Veröffentlichung eingerichtet.
+      </p>
+
+      <div class="form-row">
+        <div class="field">
+          <label for="firstName">Vorname</label>
+          <input id="firstName" type="text" placeholder="Vorname">
+        </div>
+        <div class="field">
+          <label for="lastName">Nachname</label>
+          <input id="lastName" type="text" placeholder="Nachname">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="email">E-Mail-Adresse</label>
+        <input id="email" type="email" placeholder="Ihre E-Mail-Adresse">
+      </div>
+
+      <div class="field">
+        <label for="phone">Telefonnummer (optional)</label>
+        <input id="phone" type="tel" placeholder="Ihre Telefonnummer">
+      </div>
+
+      <div class="field">
+        <label for="message">Was interessiert Sie besonders?</label>
+        <select id="message">
+          <option>Immobilien als Kapitalanlage</option>
+          <option>Steuerliche Möglichkeiten</option>
+          <option>Langfristiger Vermögensaufbau</option>
+          <option>Allgemeine Beratung</option>
+        </select>
+      </div>
+
+      <label class="form-note" style="display:block;margin:15px 0">
+        <input type="checkbox" disabled>
+        Datenschutzhinweise gelesen
+        (nach Einrichtung des Formulars aktiv)
+      </label>
+
+      <button type="button" class="btn" disabled>
+        Anfrage senden – wird eingerichtet
+      </button>
+
+      <p class="form-note" style="margin-top:20px">
+        Diese Formularvorschau speichert oder versendet
+        derzeit keine personenbezogenen Daten.
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div>
+      <div class="logo">KAPITALANLAGE<span>CHECK</span></div>
+      <small>© <span id="year"></span> Kapitalanlage-Check · Mathias Radseck</small>
+    </div>
+
+    <div class="footer-links">
+      <a href="#start">Startseite</a>
+      <a href="https://www.linkedin.com/in/mathiasradseck/"
+         target="_blank"
+         rel="noopener noreferrer">LinkedIn</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
+  </div>
+
+  <div class="container" style="margin-top:30px">
+    <small>
+      *Angabe zu fast 500 begleiteten Kunden gemäß
+      persönlicher Erfahrung des Ansprechpartners;
+      vor Veröffentlichung zu bestätigen.
+      Alle Rechenbeispiele sind unverbindlich.
+      Es besteht keine Garantie für Mieterträge,
+      Wertsteigerungen oder steuerliche Vorteile.
+      Diese Webseite ist eine noch nicht veröffentlichungsreife
+      Designvorschau. Impressum und Datenschutzerklärung
+      müssen vor dem öffentlichen Werbeeinsatz ergänzt werden.
+    </small>
+  </div>
+</footer>
+
+<script>
+"use strict";
+
+const euro = new Intl.NumberFormat("de-DE", {
+  style: "currency",
+  currency: "EUR",
+  maximumFractionDigits: 0
+});
+
+const percent = new Intl.NumberFormat("de-DE", {
+  style: "decimal",
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2
+});
+
+function calculate() {
+  const price = Number(document.getElementById("price").value);
+  const rent = Number(document.getElementById("rent").value);
+  const equity = Number(document.getElementById("equity").value);
+  const growth = Number(document.getElementById("growth").value);
+
+  if (
+    !Number.isFinite(price) ||
+    !Number.isFinite(rent) ||
+    !Number.isFinite(equity) ||
+    !Number.isFinite(growth) ||
+    price <= 0 ||
+    rent < 0 ||
+    equity < 0 ||
+    growth < -20 ||
+    growth > 20
+  ) {
+    alert("Bitte gültige Werte eingeben.");
+    return;
+  }
+
+  const annualRent = rent * 12;
+  const rentalYield = annualRent / price * 100;
+  const futureValue = price * Math.pow(1 + growth / 100, 10);
+  const increase = futureValue - price;
+  const totalRent = annualRent * 10;
+
+  document.getElementById("annualRent").textContent =
+    euro.format(annualRent);
+
+  document.getElementById("yieldResult").textContent =
+    percent.format(rentalYield) + " %";
+
+  document.getElementById("futureValue").textContent =
+    euro.format(futureValue);
+
+  document.getElementById("increase").textContent =
+    euro.format(increase);
+
+  document.getElementById("totalRent").textContent =
+    euro.format(totalRent);
+}
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+calculate();
+</script>
+
+</body>
+</html>
