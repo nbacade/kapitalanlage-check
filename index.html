@@ -1,993 +1,176 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#102b27">
-<meta name="description" content="Kapitalanlage-Check: Immobilien als Kapitalanlage, Vermögensaufbau und steuerliche Möglichkeiten mit Mathias Radseck.">
+<meta name="theme-color" content="#08120f">
+<meta name="description" content="Kapitalanlage-Check mit Mathias Radseck: Denkmal- und Seniorenimmobilien, steuerliche Möglichkeiten, Mietrenditen und persönlicher Eignungscheck.">
 <title>Kapitalanlage-Check | Mathias Radseck</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
-
 <style>
-:root{
-  --dark:#102b27;
-  --green:#1c4238;
-  --gold:#c6a56e;
-  --cream:#f7f5f0;
-  --white:#fff;
-  --text:#253830;
-  --muted:#65756e;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  background:var(--cream);
-  color:var(--text);
-  font-family:"DM Sans",Arial,sans-serif;
-  line-height:1.7;
-}
-h1,h2,h3{
-  font-family:"Playfair Display",Georgia,serif;
-  font-weight:500;
-  line-height:1.2;
-}
-h1{font-size:clamp(42px,5.5vw,76px)}
-h2{font-size:clamp(32px,4vw,52px)}
-h3{font-size:25px}
-p{margin:0 0 20px}
-a{text-decoration:none;color:inherit}
-img{display:block;width:100%}
-button,input,select,textarea{font:inherit}
-.container{width:min(1160px,90%);margin:auto}
-section{padding:95px 0}
-.eyebrow{
-  color:var(--gold);
-  font-size:12px;
-  font-weight:700;
-  letter-spacing:3px;
-  text-transform:uppercase;
-}
-.btn{
-  display:inline-block;
-  padding:15px 25px;
-  background:var(--gold);
-  color:var(--dark);
-  border:1px solid var(--gold);
-  border-radius:3px;
-  font-size:14px;
-  font-weight:700;
-  cursor:pointer;
-  transition:.2s;
-}
-.btn:hover{background:#e1c38c;transform:translateY(-2px)}
-.btn-outline{background:transparent;color:white;border-color:#ffffff80}
-.btn-outline:hover{background:#ffffff17}
-.section-head{
-  max-width:750px;
-  text-align:center;
-  margin:0 auto 45px;
-}
-.section-head p{color:var(--muted)}
-
-/* NAVIGATION */
-nav{
-  background:var(--dark);
-  color:white;
-  position:sticky;
-  top:0;
-  z-index:20;
-  border-bottom:1px solid #ffffff25;
-}
-.nav-inner{
-  min-height:78px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-}
-.logo{font:22px Georgia,serif;white-space:nowrap}
-.logo span{color:var(--gold)}
-.nav-links{
-  display:flex;
-  gap:24px;
-  align-items:center;
-  font-size:13px;
-}
-.nav-links a:hover{color:var(--gold)}
-.linkedin{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  width:35px;
-  height:35px;
-  border-radius:4px;
-  background:#0a66c2;
-  color:white!important;
-  font:bold 19px Arial,sans-serif;
-}
-
-/* HERO */
-.hero{
-  background:var(--dark);
-  color:white;
-  position:relative;
-  overflow:hidden;
-  padding:105px 0 115px;
-}
-.hero:before{
-  content:"";
-  position:absolute;
-  right:-190px;
-  top:-220px;
-  width:650px;
-  height:650px;
-  border:1px solid #c6a56e35;
-  border-radius:50%;
-  box-shadow:0 0 0 90px #c6a56e08,0 0 0 180px #c6a56e05;
-}
-.hero-grid{
-  display:grid;
-  grid-template-columns:1.15fr .85fr;
-  align-items:center;
-  gap:70px;
-  position:relative;
-}
-.hero h1{margin:20px 0}
-.hero h1 em{font-style:normal;color:var(--gold)}
-.hero-lead{font-size:18px;color:#d2ddd6;max-width:560px}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
-.hero-stats{
-  display:flex;
-  gap:40px;
-  margin-top:52px;
-  padding-top:25px;
-  border-top:1px solid #ffffff27;
-}
-.stat strong{
-  display:block;
-  font:29px Georgia,serif;
-  color:var(--gold);
-}
-.stat small{color:#b6c9bf;font-size:12px}
-.portrait-wrap{position:relative;max-width:430px;margin:auto}
-.portrait{
-  height:480px;
-  object-fit:cover;
-  object-position:center 25%;
-  background:var(--green);
-  border-radius:220px 220px 5px 5px;
-  border:6px solid #ffffff15;
-}
-.portrait-frame{
-  position:absolute;
-  inset:15px -15px -15px 15px;
-  border:1px solid var(--gold);
-  border-radius:220px 220px 5px 5px;
-  pointer-events:none;
-}
-.nameplate{
-  position:absolute;
-  left:-25px;
-  bottom:25px;
-  padding:17px 24px;
-  background:var(--cream);
-  color:var(--text);
-  box-shadow:0 12px 30px #0003;
-}
-.nameplate strong{display:block}
-.nameplate small{font-size:12px;color:var(--muted)}
-
-/* TRUST */
-.trust{
-  padding:25px 0;
-  background:#eae6dc;
-}
-.trust-inner{
-  display:flex;
-  justify-content:space-around;
-  gap:20px;
-  flex-wrap:wrap;
-  color:var(--green);
-  font-size:13px;
-  font-weight:700;
-}
-
-/* BENEFITS */
-.benefits{background:white}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{
-  padding:36px;
-  background:var(--cream);
-  border:1px solid #e7e4dc;
-  transition:.25s;
-}
-.card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 15px 35px #102b2712;
-}
-.card-number{color:#a68a58;letter-spacing:2px;font-size:12px}
-.card h3{margin:20px 0}
-.card p{color:var(--muted);font-size:14px}
-
-/* PROPERTIES */
-.gallery{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.property{
-  min-height:325px;
-  position:relative;
-  overflow:hidden;
-  background:#d9d9d4;
-}
-.property:first-child{grid-row:span 2;min-height:670px}
-.property img{
-  position:absolute;
-  inset:0;
-  height:100%;
-  object-fit:cover;
-  transition:.5s;
-}
-.property:hover img{transform:scale(1.05)}
-.property:after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(transparent 40%,#000b);
-}
-.property-label{
-  position:absolute;
-  bottom:23px;
-  left:25px;
-  color:white;
-  z-index:1;
-}
-.property-label small{letter-spacing:2px;font-size:11px;color:#ead6b5}
-.property-label h3{margin:5px 0}
-.photo-note{text-align:center;color:var(--muted);font-size:12px;margin-top:25px}
-
-/* ABOUT */
-.about{background:white}
-.about-grid{
-  display:grid;
-  grid-template-columns:.9fr 1.1fr;
-  align-items:center;
-  gap:85px;
-}
-.about-image{
-  height:470px;
-  background:#eae6dc;
-  overflow:hidden;
-}
-.about-image img{
-  height:100%;
-  object-fit:cover;
-  object-position:center 20%;
-}
-.about-text p{color:var(--muted)}
-.quote{
-  border-left:3px solid var(--gold);
-  padding:15px 0 15px 25px;
-  margin:28px 0;
-  color:var(--dark);
-  font:21px/1.5 Georgia,serif;
-}
-
-/* CALCULATOR */
-.calculator{background:var(--dark);color:white}
-.calculator .section-head p{color:#c6d3ca}
-.calc-grid{
-  display:grid;
-  grid-template-columns:.85fr 1.15fr;
-  gap:65px;
-  align-items:start;
-}
-.calc-form{
-  background:white;
-  color:var(--text);
-  padding:32px;
-  border-radius:4px;
-}
-.field{margin-bottom:17px}
-.field label{display:block;font-size:13px;font-weight:700;margin-bottom:6px}
-.field input{
-  width:100%;
-  padding:12px 14px;
-  border:1px solid #d8ddd8;
-  border-radius:3px;
-  outline:none;
-}
-.field input:focus{border-color:var(--gold)}
-.results{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:27px}
-.result{padding:22px;border:1px solid #ffffff40}
-.result span{display:block;font-size:12px;color:#c5d4c9}
-.result strong{
-  display:block;
-  font-size:clamp(22px,2.5vw,30px);
-  color:var(--gold);
-  margin-top:8px;
-}
-.result.wide{grid-column:span 2}
-.note{font-size:12px;color:#bbcbc0;margin-top:20px}
-
-/* TAX */
-.tax{background:white}
-.tax-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  align-items:center;
-  gap:75px;
-}
-.tax-figure{
-  text-align:center;
-  background:var(--cream);
-  border:1px solid #e6e2d8;
-  padding:65px 35px;
-}
-.tax-figure strong{
-  display:block;
-  color:var(--dark);
-  font:90px Georgia,serif;
-}
-.tax-figure span{font-size:14px;color:var(--muted)}
-.tax-text p{color:var(--muted)}
-.tax-info{
-  background:var(--cream);
-  padding:20px;
-  font-size:13px;
-  border-left:3px solid var(--gold);
-}
-
-/* PROCESS */
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
-.step{border-top:2px solid var(--gold);padding-top:25px}
-.step-num{font:43px Georgia,serif;color:#baa071}
-.step p{font-size:14px;color:var(--muted)}
-
-/* CONTACT */
-.contact{background:var(--dark);color:white}
-.contact-grid{
-  display:grid;
-  grid-template-columns:.9fr 1.1fr;
-  gap:75px;
-  align-items:start;
-}
-.contact-intro p{color:#d0ded4}
-.contact-form{
-  background:white;
-  color:var(--text);
-  padding:38px;
-  border-radius:4px;
-}
-.contact-form input,
-.contact-form select,
-.contact-form textarea{
-  width:100%;
-  padding:13px 14px;
-  border:1px solid #d7ddd7;
-  border-radius:3px;
-  background:white;
-  color:var(--text);
-}
-.contact-form textarea{min-height:100px;resize:vertical}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:15px}
-.form-note{font-size:12px;color:var(--muted)}
-.contact-form button:disabled{
-  opacity:.65;
-  cursor:not-allowed;
-  transform:none;
-}
-
-/* FOOTER */
-footer{background:#091b18;color:#bfcec4;padding:45px 0}
-.footer-inner{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:20px;
-  flex-wrap:wrap;
-}
-.footer-links{display:flex;gap:22px;font-size:12px}
-footer small{font-size:12px;color:#a2b5a7}
-footer a:hover{color:var(--gold)}
-
-@media(max-width:900px){
-  section{padding:70px 0}
-  .hero-grid,.about-grid,.calc-grid,.tax-grid,.contact-grid{
-    grid-template-columns:1fr;
-    gap:45px;
-  }
-  .hero-grid{text-align:center}
-  .hero-lead{margin-left:auto;margin-right:auto}
-  .hero-actions,.hero-stats{justify-content:center}
-  .portrait-wrap{max-width:360px}
-  .cards,.steps{grid-template-columns:1fr}
-  .gallery{grid-template-columns:1fr}
-  .property,.property:first-child{min-height:340px;grid-row:auto}
-  .nav-links a:not(.linkedin):not(.nav-cta){display:none}
-}
-@media(max-width:550px){
-  .logo{font-size:18px}
-  .nav-cta{display:none}
-  .hero{padding:65px 0}
-  .hero-stats{gap:20px}
-  .portrait{height:380px}
-  .nameplate{left:0}
-  .form-row,.results{grid-template-columns:1fr}
-  .result.wide{grid-column:span 1}
-  .calc-form,.contact-form{padding:23px}
-  .tax-figure strong{font-size:65px}
-}
+:root{--black:#080e0b;--forest:#112c24;--green:#1a4233;--gold:#c5a36c;--cream:#f6f3eb;--white:#fff;--ink:#1d3128;--muted:#6c7b71;--line:#dddcd3}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.7 Arial,Helvetica,sans-serif}img{display:block;width:100%}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+h1,h2,h3,.serif{font-family:Georgia,'Times New Roman',serif;font-weight:400;line-height:1.16}h1{font-size:clamp(42px,5.8vw,76px);letter-spacing:-1.5px;margin:20px 0}h2{font-size:clamp(32px,4vw,51px);margin:14px 0 23px}h3{font-size:clamp(23px,2.5vw,29px);margin:12px 0}p{margin:0 0 18px}.container{width:min(1160px,calc(100% - 42px));margin:auto}.section{padding:95px 0}.eyebrow{font-size:12px;font-weight:bold;letter-spacing:.19em;color:var(--gold);text-transform:uppercase}.muted{color:var(--muted)}.center{text-align:center}.intro{max-width:745px;margin:0 auto 46px;text-align:center}.intro p{color:var(--muted)}.btn{display:inline-flex;align-items:center;justify-content:center;text-align:center;gap:9px;min-height:52px;padding:14px 23px;border:1px solid var(--gold);border-radius:2px;background:var(--gold);color:#15291f;font-size:14px;font-weight:bold;transition:.2s}.btn:hover{background:#e5c891;transform:translateY(-2px)}.btn.ghost{background:transparent;color:white;border-color:#e7e1d180}.btn.dark{background:var(--forest);border-color:var(--forest);color:white}.btn.whatsapp{background:#178755;border-color:#178755;color:white}.small{font-size:12px;line-height:1.6}
+/* Header */
+header{position:sticky;top:0;z-index:40;background:#08140ff5;color:white;border-bottom:1px solid #ffffff23;backdrop-filter:blur(14px)}.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font:21px/1 Georgia,serif;letter-spacing:.025em;white-space:nowrap}.brand b{color:var(--gold);font-weight:400}.brand small{display:block;font:9px Arial,sans-serif;letter-spacing:.25em;color:#adbfb2;margin-top:7px}.navlinks{display:flex;align-items:center;gap:22px;font-size:13px}.navlinks a:hover{color:var(--gold)}.nav-cta{border:1px solid var(--gold);color:var(--gold);padding:8px 13px}.li{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:3px;background:#0a66c2;color:#fff!important;font:bold 19px Arial,sans-serif}.menu{display:none;border:1px solid #ffffff55;background:transparent;color:white;padding:6px 11px}
+/* Hero */
+.hero{position:relative;isolation:isolate;overflow:hidden;color:white;padding:112px 0 116px;background:radial-gradient(ellipse at 88% 15%,#40674a55,transparent 40%),linear-gradient(124deg,#050907,#112e24 65%,#080e0a)}.hero:before{content:"";position:absolute;width:640px;height:640px;right:-245px;top:-250px;border:1px solid #c5a36c44;border-radius:50%;box-shadow:0 0 0 90px #c5a36c08,0 0 0 180px #c5a36c06;z-index:-1}.hero-grid{display:grid;grid-template-columns:1.13fr .87fr;gap:72px;align-items:center}.hero h1 em{font-style:normal;color:var(--gold)}.hero .lead{font-size:18px;color:#ceddd0;max-width:570px}.actions{display:flex;flex-wrap:wrap;gap:12px;margin:30px 0 44px}.trust{display:flex;flex-wrap:wrap;gap:27px;padding-top:23px;border-top:1px solid #ffffff35}.trust strong{display:block;font:30px Georgia,serif;color:#ddc18e}.trust small{color:#b9d0c0;font-size:12px}.photo{position:relative;max-width:420px;margin:auto}.photo img{height:505px;object-fit:cover;object-position:center 23%;border:6px solid #ffffff21;border-radius:230px 230px 3px 3px;background:#203a2c}.photo:after{content:"";position:absolute;inset:16px -15px -15px 15px;border:1px solid var(--gold);border-radius:230px 230px 3px 3px;pointer-events:none}.signature{position:absolute;bottom:25px;left:-24px;z-index:1;background:#f7f4eb;padding:17px 24px;color:var(--ink);box-shadow:0 12px 35px #0004}.signature b{display:block}.signature small{color:var(--muted);font-size:11px}
+/* Philosophy */
+.strip{background:#e7e2d6;padding:24px 0}.strip-inner{display:flex;flex-wrap:wrap;gap:14px 42px;align-items:center;justify-content:center;font-weight:bold;font-size:13px;color:var(--forest)}.features{background:white}.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.feature{background:var(--cream);padding:31px;border:1px solid var(--line)}.feature .num{font-size:12px;letter-spacing:.2em;color:#ad905e}.feature h3{margin:20px 0 13px}.feature p{font-size:14px;color:var(--muted)}
+/* Objects */
+.objects{background:#0b1d16;color:white}.objects .intro p{color:#c4d3c8}.object-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}.object{position:relative;min-height:540px;overflow:hidden;display:flex;align-items:end;background:#213c2e}.object img{position:absolute;inset:0;height:100%;object-fit:cover;filter:saturate(.75);transition:.5s}.object:hover img{transform:scale(1.035)}.object:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#050c09 0%,#07110fda 32%,transparent 83%)}.object .copy{position:relative;z-index:1;padding:35px}.object p{color:#d4ded5;font-size:14px}.object a{color:#e3c48d;font-weight:bold;font-size:14px}.object .eyebrow{color:#d8bc88}.photo-disclaimer{color:#b8cbbd;font-size:12px;margin-top:19px}
+/* Numbers */
+.numbers{background:var(--cream)}.scenario-table{overflow-x:auto;background:white;border:1px solid var(--line);margin:30px 0 35px}.scenario-table table{border-collapse:collapse;width:100%;min-width:560px}.scenario-table td,.scenario-table th{padding:17px;text-align:right;border-bottom:1px solid #e6e2d8}.scenario-table th{background:#183a2e;color:white;font-size:15px}.scenario-table td:first-child,.scenario-table th:first-child{text-align:left}.scenario-table tbody tr:last-child td{border-bottom:0}.scenario-table tbody tr:nth-child(odd){background:#f7f5f0}.highlight{color:#8c6c35;font-weight:bold}.calc{display:grid;grid-template-columns:350px 1fr;gap:25px}.panel{background:white;padding:30px;border:1px solid var(--line)}.field{margin:0 0 16px}.field label{display:block;font-size:13px;font-weight:bold;margin-bottom:7px}.field input,.field select,.field textarea{width:100%;min-height:47px;padding:12px;border:1px solid #cfd7cd;border-radius:2px;background:white;color:var(--ink)}.field textarea{min-height:87px;resize:vertical}.metric-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.metric{padding:22px;background:var(--forest);color:white;min-height:119px}.metric small{display:block;color:#c4d8ca;font-size:12px;line-height:1.5}.metric strong{display:block;font:clamp(24px,3vw,34px) Georgia,serif;color:#e3c78f;margin-top:10px}.metric.span{grid-column:span 2}.calc-note{font-size:12px;color:var(--muted);margin-top:21px}
+/* Tax & about */
+.tax{background:#fff}.tax-grid,.about-grid,.contact-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:72px}.tax-card{padding:48px;background:linear-gradient(135deg,#19382c,#07110d);color:white;min-height:390px;display:flex;flex-direction:column;justify-content:center;border:1px solid #c5a36c}.tax-card .large{font:clamp(45px,5vw,70px) Georgia,serif;color:#e3c58b}.tax-card p{color:#d6e4d7}.notice{background:#f2eee5;border-left:3px solid var(--gold);padding:17px;font-size:13px}.about{background:#eae5da}.about-grid{grid-template-columns:.85fr 1.15fr}.about-img{max-height:535px;object-fit:cover;object-position:center 24%;border:9px solid white;box-shadow:0 20px 45px #05180d28}.quote{font:italic 22px/1.5 Georgia,serif;border-left:2px solid var(--gold);padding-left:21px;margin:22px 0 27px}
+/* Multi-step check */
+.check{background:radial-gradient(circle at right top,#22533b,#08130e 58%);color:white}.check .intro p{color:#cbd8cc}.wizard{width:min(850px,100%);margin:auto;padding:clamp(22px,4vw,40px);background:#f9f7f2;color:var(--ink);box-shadow:0 28px 70px #0004}.progress-top{display:flex;justify-content:space-between;gap:15px;font-size:12px;color:var(--muted)}.track{height:5px;background:#e3dfd5;margin:13px 0 29px}.bar{height:100%;width:14.2857%;background:var(--gold);transition:width .25s}.step{display:none}.step.active{display:block}.step h3{margin-bottom:25px}.question{margin-bottom:22px}.question>p{font-size:14px;font-weight:bold;margin-bottom:10px}.options{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.option{display:flex;align-items:center;gap:10px;min-height:54px;padding:12px;border:1px solid #d6d8d0;background:white;font-size:14px;cursor:pointer}.option:has(input:checked){border-color:#b8965f;background:#f6eddd}.option input{accent-color:#96753d;flex-shrink:0}.step-actions{display:flex;justify-content:space-between;gap:12px;margin-top:27px}.error{color:#ae2525;font-size:13px;min-height:20px}.result{display:none}.result.visible{display:block}.result-box{border-left:3px solid var(--gold);background:#f0ebde;padding:22px}.result-box p{margin:8px 0}.time-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.time-grid label{background:white;border:1px solid var(--line);padding:11px;font-size:13px}.time-grid input{accent-color:#957444}.contact-result{display:flex;flex-wrap:wrap;gap:12px;margin:25px 0}.preview-warning{background:#fff2d8;border-left:3px solid #c29e4d;padding:13px 17px;font-size:13px;color:#655327;margin-top:20px}
+/* FAQ / Contact */
+.faq{background:white}.faq details{border-bottom:1px solid var(--line);padding:17px 0}.faq summary{cursor:pointer;font-weight:bold}.faq details p{padding:15px 0 0;color:var(--muted);font-size:14px}.contact{background:var(--forest);color:white}.contact-grid{align-items:start}.contact p{color:#cedccf}.contact-box{padding:32px;border:1px solid #ffffff3b}.contact-box p{font-size:14px}.contact-box a:not(.btn){display:block;color:#e3cfad;margin:10px 0;overflow-wrap:anywhere}.contact-box .btn{margin-top:17px}footer{background:#050d09;color:#bccfc0;padding:40px 0}footer .container{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}footer p{max-width:740px;font-size:12px}footer a{text-decoration:underline}
+@media(max-width:920px){.section{padding:75px 0}.hero-grid,.tax-grid,.about-grid,.contact-grid{grid-template-columns:1fr;gap:45px}.hero-grid{text-align:center}.hero .lead{margin:auto}.hero .actions,.hero .trust{justify-content:center}.photo{max-width:370px}.feature-grid{grid-template-columns:1fr}.calc{grid-template-columns:1fr}.object{min-height:470px}.menu{display:block}.navlinks{display:none;position:absolute;top:76px;right:0;left:0;background:#08140f;padding:22px;flex-direction:column;align-items:stretch}.navlinks.open{display:flex}.navlinks .li{align-self:flex-start}}
+@media(max-width:650px){.container{width:min(100% - 30px,1160px)}.hero{padding:70px 0 85px}.hero .lead{font-size:16px}.photo img{height:400px}.signature{left:0}.object-grid,.options,.time-grid{grid-template-columns:1fr}.object{min-height:440px}.metric-grid{grid-template-columns:1fr}.metric.span{grid-column:auto}.tax-card{padding:30px;min-height:300px}.panel{padding:22px}.wizard{padding:21px}.brand{font-size:18px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
-
 <body>
-
-<nav>
-  <div class="container nav-inner">
-    <a class="logo" href="#start">KAPITALANLAGE<span>CHECK</span></a>
-    <div class="nav-links">
-      <a href="#vorteile">Vorteile</a>
-      <a href="#immobilien">Immobilien</a>
-      <a href="#ueber-mich">Über mich</a>
-      <a href="#rechner">Rechner</a>
-      <a href="#kontakt" class="nav-cta">Kontakt</a>
-      <a class="linkedin"
-         href="https://www.linkedin.com/in/mathiasradseck/"
-         target="_blank"
-         rel="noopener noreferrer"
-         aria-label="LinkedIn-Profil von Mathias Radseck">in</a>
-    </div>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#start">KAPITALANLAGE<b>CHECK</b><small>IMMOBILIEN MIT PERSPEKTIVE</small></a>
+    <button id="menuBtn" class="menu" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navlinks">☰</button>
+    <nav class="navlinks" id="navlinks" aria-label="Hauptnavigation">
+      <a href="#immobilien">Immobilien</a><a href="#zahlen">Beispielrechner</a>
+      <a href="#person">Über mich</a><a class="nav-cta" href="#check">Kapitalanlage-Check</a>
+      <a class="li" href="https://www.linkedin.com/in/mathiasradseck/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn-Profil von Mathias Radseck">in</a>
+    </nav>
   </div>
-</nav>
-
+</header>
 <main>
-
 <section class="hero" id="start">
   <div class="container hero-grid">
     <div>
-      <div class="eyebrow">Immobilien · Vermögen · Perspektiven</div>
-      <h1>Vermögen aufbauen. <em>Chancen erkennen.</em> Zukunft gestalten.</h1>
-      <p class="hero-lead">
-        Immobilien als Kapitalanlage können interessante
-        Möglichkeiten für den langfristigen Vermögensaufbau,
-        laufende Mieteinnahmen und steuerliche Vorteile bieten.
-      </p>
-      <p class="hero-lead">
-        Ich begleite Sie persönlich auf dem Weg zu einer
-        passenden Immobilienkapitalanlage.
-      </p>
-      <div class="hero-actions">
-        <a class="btn" href="#kontakt">Persönlichen Check anfragen →</a>
-        <a class="btn btn-outline" href="#ueber-mich">Mehr über mich</a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat">
-          <strong>Fast 500</strong>
-          <small>begleitete Kunden*</small>
-        </div>
-        <div class="stat">
-          <strong>10 Jahre</strong>
-          <small>steuerlich relevante Haltefrist</small>
-        </div>
-        <div class="stat">
-          <strong>Persönlich</strong>
-          <small>individuelle Begleitung</small>
-        </div>
-      </div>
+      <div class="eyebrow">Denkmalimmobilien · Seniorenimmobilien</div>
+      <h1>Steuervorteile entdecken. <em>Vermögen aufbauen.</em></h1>
+      <p class="lead">Entdecken Sie, welche finanziellen Möglichkeiten ausgewählte Denkmal- und Seniorenimmobilien für Ihre persönliche Zukunft bieten können.</p>
+      <p class="lead">Persönlich begleitet von einem erfahrenen Ansprechpartner – verständlich, individuell und mit Blick auf Ihre finanziellen Ziele.</p>
+      <div class="actions"><a class="btn" href="#check">Jetzt kostenlos Möglichkeiten prüfen →</a><a class="btn ghost" href="#zahlen">Zahlen ansehen</a></div>
+      <div class="trust"><div><strong>30 Jahre</strong><small>Erfahrung im Immobilienvertrieb</small></div><div><strong>Über 500</strong><small>begleitete und beratene Kunden</small></div></div>
     </div>
-
-    <div class="portrait-wrap">
-      <img class="portrait"
-           src="portrait.jpg"
-           alt="Mathias Radseck">
-      <div class="portrait-frame"></div>
-      <div class="nameplate">
-        <strong>Mathias Radseck</strong>
-        <small>Ihr persönlicher Ansprechpartner</small>
-      </div>
+    <div class="photo"><img src="Moderator.JPG" alt="Mathias Radseck" width="500" height="500"><div class="signature"><b>Mathias Radseck</b><small>Freier und selbstständiger Immobilienvermittler</small></div></div>
+  </div>
+</section>
+<div class="strip"><div class="container strip-inner"><span>◆ Persönlicher Ansprechpartner</span><span>◆ Steuerliche Perspektiven</span><span>◆ Transparente Beispielrechnungen</span><span>◆ Kostenloser Orientierungscheck</span></div></div>
+<section class="section features">
+  <div class="container"><div class="intro"><div class="eyebrow">Kapitalanlage mit Substanz</div><h2>Aus Möglichkeiten wird eine Strategie.</h2><p>Nicht jedes Immobilienkonzept passt zu jeder Person. Entscheidend sind Ihre Ziele, Ihr finanzieller Rahmen und eine verständliche Betrachtung der Chancen und Risiken.</p></div>
+    <div class="feature-grid">
+      <article class="feature"><span class="num">01 / STEUERN</span><h3>Steuerliche Möglichkeiten</h3><p>Bei geeigneten Denkmalimmobilien können begünstigte Sanierungsaufwendungen besondere Abschreibungen ermöglichen.</p></article>
+      <article class="feature"><span class="num">02 / MIETE</span><h3>Laufende Einnahmen</h3><p>Bei Senioren- und Pflegeimmobilien können Mieteinnahmen zur Finanzierung beitragen. Objekt- und Betreiberrisiken müssen geprüft werden.</p></article>
+      <article class="feature"><span class="num">03 / ZUKUNFT</span><h3>Langfristiger Vermögensaufbau</h3><p>Tilgung und eine mögliche Wertentwicklung eröffnen Perspektiven. Eine Wertsteigerung kann jedoch nicht zugesichert werden.</p></article>
     </div>
   </div>
 </section>
-
-<div class="trust">
-  <div class="container trust-inner">
-    <span>◆ Persönliche Begleitung</span>
-    <span>◆ Individuelle Prüfung</span>
-    <span>◆ Langfristiger Vermögensaufbau</span>
-    <span>◆ Transparente Beispiele</span>
-  </div>
-</div>
-
-<section class="benefits" id="vorteile">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Warum Immobilien?</div>
-      <h2>Eine Investition. Mehrere Perspektiven.</h2>
-      <p>Eine gut ausgewählte Kapitalanlageimmobilie kann unterschiedliche finanzielle Ziele unterstützen.</p>
+<section class="section objects" id="immobilien">
+ <div class="container"><div class="intro"><div class="eyebrow">Zwei Immobilienwelten</div><h2>Welche Immobilie passt zu Ihren Zielen?</h2><p>Steuerliche Gestaltung oder regelmäßige Mieteinnahmen? Wir schauen auf das Gesamtbild.</p></div>
+  <div class="object-grid">
+    <article class="object"><img loading="lazy" src="https://images.unsplash.com/photo-1464938050520-ef2270bb8ce8?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Illustratives Bild historischer Architektur"><div class="copy"><span class="eyebrow">Denkmalimmobilien · Musterbild</span><h3>Besondere Architektur. Besondere steuerliche Möglichkeiten.</h3><p>Unter gesetzlichen Voraussetzungen können begünstigte Sanierungsaufwendungen über zwölf Jahre besonders abgeschrieben werden.</p><a href="#steuern">Denkmalvorteile kennenlernen →</a></div></article>
+    <article class="object"><img loading="lazy" src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Illustratives Bild moderner Wohnarchitektur"><div class="copy"><span class="eyebrow">Senioren- und Pflegeimmobilien · Musterbild</span><h3>Mieteinnahmen. Eine langfristige Perspektive.</h3><p>Immobilien mit seniorengerechten Nutzungskonzepten können interessante Anlageformen sein. Mietertrag und Betreiberbonität sind entscheidend.</p><a href="#zahlen">Mögliche Renditen vergleichen →</a></div></article>
+  </div><p class="photo-disclaimer">Die Bilder sind illustrative Musterbilder und stellen keine konkret verfügbaren Verkaufsobjekte dar. Bildnutzungsrechte vor öffentlicher Veröffentlichung prüfen.</p>
+ </div>
+</section>
+<section class="section numbers" id="zahlen">
+  <div class="container"><div class="intro"><div class="eyebrow">Immobilien verständlich rechnen</div><h2>Was könnten 200.000 € Kaufpreis bedeuten?</h2><p>Vergleichen Sie drei angenommene Bruttomietrenditen. Die Wertentwicklung von 5,65 % pro Jahr ist eine separate Modellannahme, keine Zusage.</p></div>
+   <div class="scenario-table"><table><thead><tr><th>Bruttomietrendite</th><th>4,0 %</th><th>4,5 %</th><th>5,0 %</th></tr></thead><tbody>
+    <tr><td>Jahreskaltmiete</td><td id="a4">8.000 €</td><td id="a45">9.000 €</td><td id="a5">10.000 €</td></tr>
+    <tr><td>Monatliche Kaltmiete</td><td id="m4">667 €</td><td id="m45">750 €</td><td id="m5">833 €</td></tr>
+    <tr><td>Kaltmiete über 10 Jahre*</td><td id="t4">80.000 €</td><td id="t45">90.000 €</td><td id="t5">100.000 €</td></tr>
+   </tbody></table></div>
+   <div class="calc">
+    <div class="panel"><h3>Ihr Rechenbeispiel</h3>
+      <div class="field"><label for="price">Kaufpreis (€)</label><input id="price" type="number" min="50000" max="2000000" step="1000" value="200000"></div>
+      <div class="field"><label for="yield">Angenommene Bruttomietrendite</label><select id="yield"><option value="4">4,0 %</option><option value="4.5" selected>4,5 %</option><option value="5">5,0 %</option></select></div>
+      <div class="field"><label for="interest">Beispiel-Sollzins (%)</label><input id="interest" type="number" min="0" max="15" step="0.1" value="3.8"></div>
+      <div class="field"><label for="repayment">Anfangstilgung (%)</label><input id="repayment" type="number" min="0" max="15" step="0.1" value="2"></div>
+      <div class="field"><label for="expenses">Nicht umlagefähige Kosten pro Jahr (€)</label><input id="expenses" type="number" min="0" max="100000" step="50" value="550"></div>
+      <p class="small muted">Vereinfacht: 100 % Kaufpreisfinanzierung; nur Erwerbsnebenkosten als Eigenkapital (hier beispielhaft 7 %).</p>
     </div>
-
-    <div class="cards">
-      <article class="card">
-        <span class="card-number">01 / EINNAHMEN</span>
-        <h3>Regelmäßige Mieteinnahmen</h3>
-        <p>
-          Mieterträge können zur Finanzierung beitragen und
-          langfristig zusätzliche Einnahmen ermöglichen.
-          Leerstand und Bewirtschaftungskosten sind einzukalkulieren.
-        </p>
-      </article>
-
-      <article class="card">
-        <span class="card-number">02 / STEUERN</span>
-        <h3>Steuerliche Möglichkeiten</h3>
-        <p>
-          Abschreibungen, Finanzierungszinsen und weitere
-          abzugsfähige Aufwendungen können je nach
-          persönlicher Situation steuerliche Vorteile bieten.
-        </p>
-      </article>
-
-      <article class="card">
-        <span class="card-number">03 / VERMÖGEN</span>
-        <h3>Langfristiger Vermögensaufbau</h3>
-        <p>
-          Tilgung und eine mögliche Wertentwicklung können
-          zum Vermögensaufbau beitragen. Wertsteigerungen
-          sind allerdings nicht garantiert.
-        </p>
-      </article>
-    </div>
+    <div><div class="metric-grid" aria-live="polite">
+      <div class="metric"><small>Monatliche Kaltmiete</small><strong id="outRent">750 €</strong></div>
+      <div class="metric"><small>Monatliche Kreditrate</small><strong id="outRate">967 €</strong></div>
+      <div class="metric"><small>Eigenaufwand pro Monat, vor Steuern*</small><strong id="outOwn">263 €</strong></div>
+      <div class="metric"><small>Eigenkapital für Nebenkosten (7 %)</small><strong id="outCosts">14.000 €</strong></div>
+      <div class="metric"><small>Rechnerischer Wert nach 10 Jahren (5,65 % p. a.)</small><strong id="outValue">346.000 €</strong></div>
+      <div class="metric"><small>Restschuld nach 10 Jahren</small><strong id="outDebt">151.000 €</strong></div>
+      <div class="metric span"><small>Immobilienwert abzüglich Restschuld nach 10 Jahren – vor Eigenkapital, laufenden Aufwendungen und Verkaufsnebenkosten</small><strong id="outEquity">195.000 €</strong></div>
+    </div><p class="calc-note">*Modellrechnung ohne Mietsteigerungen, Mietausfall, Sonderreparaturen, Kauf- und Verkaufskosten über die dargestellten Annahmen hinaus, Steuern oder Zinsänderungen. Kein persönlicher Gewinn- oder Renditenachweis. Die 5,65 % sind eine frei gesetzte Wachstumsannahme, nicht als historischer Marktdurchschnitt belegt.</p></div>
+   </div>
   </div>
 </section>
-
-<section id="immobilien">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Immobilienwelten</div>
-      <h2>Werte, die man sehen kann.</h2>
-      <p>
-        Unterschiedliche Wohnimmobilien eröffnen
-        unterschiedliche Möglichkeiten.
-        Standort, Objektqualität und Wirtschaftlichkeit
-        stehen dabei im Mittelpunkt.
-      </p>
+<section class="section tax" id="steuern"><div class="container tax-grid">
+ <div class="tax-card"><div class="eyebrow">Rechenbeispiel Denkmal-AfA</div><div class="large">3.780 €</div><p>Rechnerische Einkommensteuerentlastung pro Jahr in den ersten acht Jahren</p><div style="border-top:1px solid #c5a36c65;padding-top:20px"><b>Beispiel:</b> 100.000 € begünstigte Sanierungskosten × 9 % AfA × 42 % angenommener Grenzsteuersatz</div></div>
+ <div><div class="eyebrow">Steuerliche Gestaltung</div><h2>Steuervorteile können den Unterschied machen.</h2><p>Bei vermieteten, begünstigten Denkmalimmobilien können bestimmte bescheinigte Sanierungskosten nach § 7i EStG in den ersten acht Jahren mit jährlich 9 % und in den folgenden vier Jahren mit jährlich 7 % abgeschrieben werden.</p><p>Bei den oben angenommenen 100.000 € begünstigten Kosten und 42 % Grenzsteuersatz ergibt sich vereinfacht eine rechnerische Entlastung von <b>36.120 € in den ersten zehn Jahren</b>. Das ist kein verbindlicher Steuerbescheid.</p><p>Bei privat gehaltenen Immobilien kann außerdem ein Verkauf nach Ablauf von mehr als zehn Jahren unter bestimmten Voraussetzungen einkommensteuerfrei sein (§ 23 EStG).</p><div class="notice"><b>Wichtig:</b> Tatsächliche Steuerersparnisse hängen von begünstigten Aufwendungen, Bescheinigungen und der persönlichen Steuersituation ab. Besonderheiten wie gewerblicher Grundstückshandel oder Betriebsvermögen sind gesondert zu prüfen.</div></div>
+</div></section>
+<section class="section about" id="person"><div class="container about-grid">
+  <img class="about-img" loading="lazy" src="Moderator.JPG" alt="Mathias Radseck – Ihr Ansprechpartner" width="500" height="500">
+  <div><div class="eyebrow">Persönlich statt anonym</div><h2>Erfahrung schafft Vertrauen.</h2><p>Mein Name ist <b>Mathias Radseck</b>. Ich bin freier und selbstständiger Immobilienvermittler, spezialisiert auf Denkmal- und Seniorenimmobilien.</p><p>In <b>30 Jahren Erfahrung</b> im Vertrieb von Kapitalanlageimmobilien habe ich <b>über 500 Kunden</b> beraten und auf ihrem Weg begleitet – darunter auch bis zum erfolgreichen Immobilienkauf.</p><div class="quote">„Eine gute Kapitalanlage beginnt mit dem Verständnis für Ihre persönlichen Ziele.“</div><p>Mein Anspruch: nachvollziehbare Zahlen, persönliche Kommunikation und eine ehrliche Betrachtung von Möglichkeiten und Risiken.</p><a class="btn dark" href="https://www.linkedin.com/in/mathiasradseck/" target="_blank" rel="noopener noreferrer">Mein LinkedIn-Profil ansehen ↗</a></div>
+</div></section>
+<section class="section check" id="check"><div class="container"><div class="intro"><div class="eyebrow">Ihr persönlicher Orientierungscheck</div><h2>Welche Kapitalanlage könnte zu Ihnen passen?</h2><p>Beantworten Sie einige Fragen zu Ihren Zielen und Ihrer finanziellen Ausgangslage. Anschließend sehen Sie eine unverbindliche erste Einordnung und können einen Gesprächstermin anfragen.</p></div>
+<div class="wizard" id="wizard">
+  <div id="formArea"><div class="progress-top"><span>INDIVIDUELLER KAPITALANLAGE-CHECK</span><span id="stepText">Schritt 1 von 7</span></div><div class="track"><div class="bar" id="progressBar"></div></div>
+  <form id="checkForm" novalidate>
+    <div class="step active"><h3>1. Was möchten Sie erreichen?</h3><div class="question"><p>Ihr wichtigstes Anlageziel *</p><div class="options"><label class="option"><input type="radio" name="goal" value="Steuervorteile" required> Steuervorteile nutzen</label><label class="option"><input type="radio" name="goal" value="Mieteinnahmen"> Mieteinnahmen erzielen</label><label class="option"><input type="radio" name="goal" value="Vermögensaufbau"> Vermögen aufbauen</label><label class="option"><input type="radio" name="goal" value="Kombination"> Mehrere Ziele kombinieren</label></div></div><div class="question"><p>Welche Immobilie interessiert Sie? *</p><div class="options"><label class="option"><input type="radio" name="kind" value="Denkmalimmobilie" required> Denkmalimmobilie</label><label class="option"><input type="radio" name="kind" value="Seniorenimmobilie"> Senioren-/Pflegeimmobilie</label><label class="option"><input type="radio" name="kind" value="Beides"> Beide Varianten</label><label class="option"><input type="radio" name="kind" value="Offen"> Noch unentschlossen</label></div></div></div>
+    <div class="step"><h3>2. Ihre persönliche Situation</h3><div class="field"><label for="job">Berufliche Situation *</label><select id="job" name="job" required><option value="">Bitte auswählen</option><option>Angestellt</option><option>Verbeamtet</option><option>Selbstständig</option><option>Freiberuflich</option><option>Rentner/in</option><option>Sonstiges</option></select></div><div class="field"><label for="jobDuration">Beschäftigungsdauer / Selbstständigkeit</label><select id="jobDuration" name="jobDuration"><option value="">Bitte auswählen</option><option>Unter 2 Jahre</option><option>2–5 Jahre</option><option>Über 5 Jahre</option></select></div><div class="field"><label for="birth">Geburtsjahr (optional)</label><input id="birth" name="birth" type="number" min="1930" max="2008" placeholder="z. B. 1982"></div><div class="field"><label for="family">Haushaltssituation</label><select id="family" name="family"><option value="">Bitte auswählen</option><option>Alleinstehend</option><option>Verheiratet / Partnerschaft</option><option>Sonstiges</option></select></div></div>
+    <div class="step"><h3>3. Einkommen und Steuerbelastung</h3><div class="field"><label for="net">Monatliches Haushaltsnettoeinkommen *</label><select id="net" name="net" required><option value="">Bitte auswählen</option><option>Unter 3.000 €</option><option>3.000–4.000 €</option><option>4.000–6.000 €</option><option>6.000–8.000 €</option><option>Über 8.000 €</option></select></div><div class="field"><label for="gross">Jährliches Bruttoeinkommen des Haushalts</label><select id="gross" name="gross"><option value="">Bitte auswählen</option><option>Unter 50.000 €</option><option>50.000–80.000 €</option><option>80.000–120.000 €</option><option>120.000–180.000 €</option><option>Über 180.000 €</option></select></div><div class="field"><label for="taxStatus">Steuerliche Veranlagung</label><select id="taxStatus" name="taxStatus"><option value="">Bitte auswählen</option><option>Einzelveranlagung</option><option>Zusammenveranlagung</option><option>Unbekannt</option></select></div></div>
+    <div class="step"><h3>4. Eigenkapital und vorhandene Werte</h3><div class="field"><label for="capital">Verfügbares Eigenkapital *</label><select id="capital" name="capital" required><option value="">Bitte auswählen</option><option>Unter 10.000 €</option><option>10.000–20.000 €</option><option>20.000–40.000 €</option><option>40.000–80.000 €</option><option>Über 80.000 €</option></select></div><div class="field"><label for="capitalUse">Wie möchten Sie Eigenkapital einsetzen?</label><select id="capitalUse" name="capitalUse"><option>Nur für Kaufnebenkosten</option><option>Auch zur Reduzierung des Kaufpreisdarlehens</option><option>Noch unentschlossen</option></select></div><div class="field"><label for="existing">Besitzen Sie bereits eine Immobilie?</label><select id="existing" name="existing"><option>Nein</option><option>Ja, selbst genutzt</option><option>Ja, vermietet</option><option>Ja, beides</option></select></div></div>
+    <div class="step"><h3>5. Monatliche Verpflichtungen</h3><div class="field"><label for="housing">Monatliche Wohnkosten einschließlich Kreditrate/Miete *</label><select id="housing" name="housing" required><option value="">Bitte auswählen</option><option>Unter 700 €</option><option>700–1.200 €</option><option>1.200–2.000 €</option><option>Über 2.000 €</option></select></div><div class="field"><label for="debt">Weitere monatliche Kreditraten</label><select id="debt" name="debt"><option>Keine</option><option>Unter 300 €</option><option>300–700 €</option><option>Über 700 €</option></select></div><div class="field"><label for="obligations">Weitere regelmäßige Belastungen, z. B. Unterhalt</label><select id="obligations" name="obligations"><option>Keine</option><option>Unter 300 €</option><option>300–700 €</option><option>Über 700 €</option></select></div></div>
+    <div class="step"><h3>6. Ihre Investitionsvorstellung</h3><div class="field"><label for="ownBudget">Tragbarer zusätzlicher Eigenaufwand pro Monat *</label><select id="ownBudget" name="ownBudget" required><option value="">Bitte auswählen</option><option>Bis 150 €</option><option>150–300 €</option><option>300–500 €</option><option>Über 500 €</option><option>Abhängig von Steuerersparnis und Mieteinnahmen</option></select></div><div class="field"><label for="timing">Wann möchten Sie investieren?</label><select id="timing" name="timing"><option>Innerhalb von 3 Monaten</option><option>3–6 Monate</option><option>6–12 Monate</option><option>Später / zunächst informieren</option></select></div><div class="field"><label for="location">Bevorzugter Standort</label><select id="location" name="location"><option>Bundesweit offen</option><option>Hannover / Braunschweig / Celle</option><option>Norddeutschland</option><option>Anderer Standort</option></select></div></div>
+    <div class="step"><h3>7. Ihre persönliche Auswertung</h3><p class="muted">Geben Sie Ihre Kontaktdaten und bevorzugten Gesprächszeiten an. In dieser Vorschau werden die Angaben noch nicht übermittelt.</p>
+      <div class="options"><div class="field"><label for="first">Vorname *</label><input id="first" name="first" autocomplete="given-name" required></div><div class="field"><label for="last">Nachname *</label><input id="last" name="last" autocomplete="family-name" required></div></div>
+      <div class="options"><div class="field"><label for="email">E-Mail *</label><input id="email" name="email" type="email" autocomplete="email" required></div><div class="field"><label for="phone">Telefonnummer *</label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div></div>
+      <div class="question"><p>An welchen Tagen sind Sie telefonisch erreichbar? (Mehrfachauswahl)</p><div class="time-grid" id="days"><label><input type="checkbox" value="Montag"> Montag</label><label><input type="checkbox" value="Dienstag"> Dienstag</label><label><input type="checkbox" value="Mittwoch"> Mittwoch</label><label><input type="checkbox" value="Donnerstag"> Donnerstag</label><label><input type="checkbox" value="Freitag"> Freitag</label><label><input type="checkbox" value="Samstag"> Samstag</label></div></div>
+      <div class="question"><p>Bevorzugte Uhrzeiten (Mehrfachauswahl)</p><div class="time-grid" id="times"><label><input type="checkbox" value="08:00–12:00 Uhr"> 08:00–12:00 Uhr</label><label><input type="checkbox" value="12:00–16:00 Uhr"> 12:00–16:00 Uhr</label><label><input type="checkbox" value="16:00–20:00 Uhr"> 16:00–20:00 Uhr</label><label><input type="checkbox" value="Nach 20:00 Uhr"> Nach 20:00 Uhr</label></div></div>
+      <div class="field"><label for="notes">Weitere Terminwünsche (optional)</label><textarea id="notes" name="notes" maxlength="280" placeholder="Zum Beispiel: Aufgrund von Schichtdienst am besten donnerstags ab 18 Uhr."></textarea></div>
     </div>
-
-    <div class="gallery">
-      <div class="property">
-        <img loading="lazy"
-             src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85"
-             alt="Wohnimmobilie, illustrative Aufnahme">
-        <div class="property-label">
-          <small>BEISPIELAUFNAHME</small>
-          <h3>Moderne Wohnimmobilien</h3>
-        </div>
-      </div>
-
-      <div class="property">
-        <img loading="lazy"
-             src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1000&q=85"
-             alt="Modernes Wohnkonzept, illustrative Aufnahme">
-        <div class="property-label">
-          <small>BEISPIELAUFNAHME</small>
-          <h3>Hochwertige Wohnkonzepte</h3>
-        </div>
-      </div>
-
-      <div class="property">
-        <img loading="lazy"
-             src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85"
-             alt="Architektur, illustrative Aufnahme">
-        <div class="property-label">
-          <small>BEISPIELAUFNAHME</small>
-          <h3>Immobilien mit Perspektive</h3>
-        </div>
-      </div>
-    </div>
-
-    <p class="photo-note">
-      Die Fotos dienen ausschließlich als illustrative Designbeispiele
-      und zeigen keine konkret angebotenen Immobilien.
-    </p>
-  </div>
-</section>
-
-<section class="about" id="ueber-mich">
-  <div class="container about-grid">
-    <div class="about-image">
-      <img loading="lazy" src="portrait.jpg" alt="Mathias Radseck">
-    </div>
-
-    <div class="about-text">
-      <div class="eyebrow">Ihr Ansprechpartner</div>
-      <h2>Erfahrung schafft Vertrauen.</h2>
-      <p>
-        Mein Name ist <strong>Mathias Radseck</strong>.
-        In meiner bisherigen Tätigkeit im Bereich
-        Kapitalanlageimmobilien habe ich fast 500 Kunden
-        auf ihrem Weg zur Immobilienkapitalanlage begleitet.
-      </p>
-      <p>
-        Eine Immobilieninvestition ist weit mehr als eine
-        Entscheidung über Kaufpreis und Quadratmeter.
-        Es geht um finanzielle Möglichkeiten, persönliche
-        Ziele und eine durchdachte langfristige Strategie.
-      </p>
-
-      <div class="quote">
-        „Eine gute Kapitalanlage beginnt nicht mit einer Immobilie,
-        sondern mit dem Verständnis für Ihre persönlichen Ziele.“
-      </div>
-
-      <p>
-        Mein Anspruch ist eine persönliche Begleitung,
-        verständliche Informationen und eine nachvollziehbare
-        Betrachtung von Chancen und Risiken.
-      </p>
-
-      <a class="btn"
-         href="https://www.linkedin.com/in/mathiasradseck/"
-         target="_blank"
-         rel="noopener noreferrer">
-         Mein LinkedIn-Profil ansehen ↗
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="calculator" id="rechner">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Zahlen verstehen</div>
-      <h2>Was könnte Ihre Immobilie erwirtschaften?</h2>
-      <p>
-        Dieser Rechner zeigt beispielhaft Mieteinnahmen,
-        Bruttomietrendite und eine mögliche Wertentwicklung.
-      </p>
-    </div>
-
-    <div class="calc-grid">
-      <div class="calc-form">
-        <h3>Ihr Rechenbeispiel</h3>
-
-        <div class="field">
-          <label for="price">Immobilienkaufpreis (€)</label>
-          <input type="number" id="price" value="250000" min="1" step="1000">
-        </div>
-
-        <div class="field">
-          <label for="rent">Monatliche Kaltmiete (€)</label>
-          <input type="number" id="rent" value="850" min="0" step="10">
-        </div>
-
-        <div class="field">
-          <label for="equity">Eigenkapital (€)</label>
-          <input type="number" id="equity" value="50000" min="0" step="1000">
-        </div>
-
-        <div class="field">
-          <label for="growth">Angenommene Wertentwicklung pro Jahr (%)</label>
-          <input type="number" id="growth" value="2" min="-20" max="20" step="0.5">
-        </div>
-
-        <button class="btn" type="button" onclick="calculate()">
-          Beispiel berechnen →
-        </button>
-      </div>
-
-      <div>
-        <div class="eyebrow">Ihre Beispielauswertung</div>
-        <h2>Die Zahlen im Überblick.</h2>
-        <p style="color:#c5d3cb">
-          Die Ergebnisse sind bewusst vereinfacht und
-          dienen nur zur ersten Orientierung.
-        </p>
-
-        <div class="results" aria-live="polite">
-          <div class="result">
-            <span>Jährliche Kaltmiete</span>
-            <strong id="annualRent">10.200 €</strong>
-          </div>
-
-          <div class="result">
-            <span>Bruttomietrendite</span>
-            <strong id="yieldResult">4,08 %</strong>
-          </div>
-
-          <div class="result">
-            <span>Rechnerischer Kaufpreis nach 10 Jahren</span>
-            <strong id="futureValue">304.749 €</strong>
-          </div>
-
-          <div class="result">
-            <span>Rechnerische Wertveränderung</span>
-            <strong id="increase">54.749 €</strong>
-          </div>
-
-          <div class="result wide">
-            <span>Summe der Kaltmieten in 10 Jahren bei unveränderter Miete</span>
-            <strong id="totalRent">102.000 €</strong>
-          </div>
-        </div>
-
-        <p class="note">
-          Wichtig: Keine Berücksichtigung von Erwerbsnebenkosten,
-          Zinsen, Tilgung, Instandhaltung, Leerstand, Verwaltung,
-          Steuern, Verkaufskosten oder Mietänderungen.
-          Das Eigenkapital beeinflusst daher die hier gezeigten
-          Kennzahlen nicht. Die angenommene Wertentwicklung
-          ist keine Prognose. Eine vollständige
-          Investitionsrechnung kann deutlich anders ausfallen.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="tax" id="steuern">
-  <div class="container tax-grid">
-    <div class="tax-figure">
-      <div class="eyebrow">Langfristige Perspektive</div>
-      <strong>10+</strong>
-      <span>Jahre zwischen Anschaffung und Veräußerung</span>
-      <p style="margin-top:25px;color:var(--muted)">
-        Ein möglicher steuerlicher Vorteil bei
-        privat gehaltenen Immobilien.
-      </p>
-    </div>
-
-    <div class="tax-text">
-      <div class="eyebrow">Steuerliche Perspektiven</div>
-      <h2>Ein besonders interessanter Aspekt nach zehn Jahren.</h2>
-
-      <p>
-        Bei einer privat gehaltenen Immobilie kann ein
-        Veräußerungsgewinn nach Ablauf der gesetzlichen
-        Zehnjahresfrist grundsätzlich einkommensteuerfrei sein.
-      </p>
-
-      <p>
-        Entscheidend ist insbesondere, dass zwischen
-        Anschaffung und Verkauf mehr als zehn Jahre liegen
-        und keine abweichenden steuerlichen Regelungen greifen.
-      </p>
-
-      <div class="tax-info">
-        <strong>Wichtiger Hinweis:</strong><br>
-        Die Regelung ergibt sich aus § 23 EStG.
-        Ausnahmen sind möglich, insbesondere beim
-        gewerblichen Grundstückshandel oder Betriebsvermögen.
-        Die persönliche Situation sollte steuerlich
-        geprüft werden.
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="ablauf">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Der Weg zur Kapitalanlage</div>
-      <h2>Einfach. Persönlich. Verständlich.</h2>
-      <p>In drei Schritten zu einer ersten Einschätzung Ihrer Möglichkeiten.</p>
-    </div>
-
-    <div class="steps">
-      <div class="step">
-        <span class="step-num">01</span>
-        <h3>Interesse anmelden</h3>
-        <p>
-          Sie nehmen unverbindlich Kontakt auf und schildern,
-          welche Ziele Sie mit einer Immobilienkapitalanlage verfolgen.
-        </p>
-      </div>
-
-      <div class="step">
-        <span class="step-num">02</span>
-        <h3>Möglichkeiten prüfen</h3>
-        <p>
-          Wir besprechen gemeinsam, welche Rahmenbedingungen
-          und Anlagekonzepte grundsätzlich zu Ihnen passen könnten.
-        </p>
-      </div>
-
-      <div class="step">
-        <span class="step-num">03</span>
-        <h3>Perspektiven entwickeln</h3>
-        <p>
-          Auf dieser Grundlage können passende
-          Immobilienmöglichkeiten und ihre Wirtschaftlichkeit
-          näher betrachtet werden.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="contact" id="kontakt">
-  <div class="container contact-grid">
-    <div class="contact-intro">
-      <div class="eyebrow">Persönlicher Kontakt</div>
-      <h2>Welche Möglichkeiten passen zu Ihnen?</h2>
-      <p>
-        Lassen Sie uns gemeinsam einen ersten Blick
-        auf Ihre Ziele und Möglichkeiten werfen.
-      </p>
-      <p>
-        Eine unverbindliche Kontaktaufnahme ist der
-        erste Schritt zu einer fundierten Einschätzung.
-      </p>
-
-      <h3>Mathias Radseck</h3>
-      <p>
-        Kapitalanlage-Check<br>
-        Schackstr. 18<br>
-        29221 Celle
-      </p>
-
-      <a class="btn btn-outline"
-         href="https://www.linkedin.com/in/mathiasradseck/"
-         target="_blank"
-         rel="noopener noreferrer">
-         Auf LinkedIn vernetzen ↗
-      </a>
-    </div>
-
-    <div class="contact-form">
-      <h3>Kapitalanlage-Check anfragen</h3>
-      <p class="form-note">
-        Vorschau des geplanten Kontaktformulars.
-        Der Versand wird vor Veröffentlichung eingerichtet.
-      </p>
-
-      <div class="form-row">
-        <div class="field">
-          <label for="firstName">Vorname</label>
-          <input id="firstName" type="text" placeholder="Vorname">
-        </div>
-        <div class="field">
-          <label for="lastName">Nachname</label>
-          <input id="lastName" type="text" placeholder="Nachname">
-        </div>
-      </div>
-
-      <div class="field">
-        <label for="email">E-Mail-Adresse</label>
-        <input id="email" type="email" placeholder="Ihre E-Mail-Adresse">
-      </div>
-
-      <div class="field">
-        <label for="phone">Telefonnummer (optional)</label>
-        <input id="phone" type="tel" placeholder="Ihre Telefonnummer">
-      </div>
-
-      <div class="field">
-        <label for="message">Was interessiert Sie besonders?</label>
-        <select id="message">
-          <option>Immobilien als Kapitalanlage</option>
-          <option>Steuerliche Möglichkeiten</option>
-          <option>Langfristiger Vermögensaufbau</option>
-          <option>Allgemeine Beratung</option>
-        </select>
-      </div>
-
-      <label class="form-note" style="display:block;margin:15px 0">
-        <input type="checkbox" disabled>
-        Datenschutzhinweise gelesen
-        (nach Einrichtung des Formulars aktiv)
-      </label>
-
-      <button type="button" class="btn" disabled>
-        Anfrage senden – wird eingerichtet
-      </button>
-
-      <p class="form-note" style="margin-top:20px">
-        Diese Formularvorschau speichert oder versendet
-        derzeit keine personenbezogenen Daten.
-      </p>
-    </div>
-  </div>
-</section>
-
+    <p class="error" id="formError" role="alert"></p><div class="step-actions"><button class="btn dark" type="button" id="back" style="visibility:hidden">← Zurück</button><button class="btn" type="button" id="next">Weiter →</button></div>
+  </form></div>
+  <div class="result" id="result"><div class="eyebrow">Ihre erste Orientierung</div><h3>Vielen Dank für Ihre Angaben!</h3><div class="result-box"><p id="resultText">Wir haben Ihre Angaben berücksichtigt.</p><p><b>Ihr Anlageziel:</b> <span id="goalText"></span></p><p><b>Ihr monatlicher Finanzierungsrahmen:</b> <span id="budgetText"></span></p></div><p style="margin-top:20px">Eine passende Immobilie und ein realistischer Kaufpreis lassen sich erst nach einer individuellen Prüfung ermitteln.</p><div class="preview-warning"><b>Wichtig – Designvorschau:</b> Ihre Selbstauskunft wurde nicht versendet oder gespeichert. Die folgenden Links übermitteln nur eine Terminanfrage, keine Finanzangaben.</div><div class="contact-result"><button class="btn whatsapp" type="button" id="whatsApp">Termin per WhatsApp anfragen ↗</button><button class="btn dark" type="button" id="mail">Termin per E-Mail anfragen ↗</button></div><button class="btn dark" type="button" id="restart">Check erneut starten</button></div>
+</div></div></section>
+<section class="section faq"><div class="container"><div class="intro"><div class="eyebrow">Gut informiert entscheiden</div><h2>Häufige Fragen</h2></div>
+ <details><summary>Ist der Kapitalanlage-Check kostenlos?</summary><p>Ja. Der unverbindliche Orientierungscheck dient der ersten Einordnung Ihrer Anlageziele und Möglichkeiten.</p></details>
+ <details><summary>Sind die gezeigten Mieteinnahmen garantiert?</summary><p>Nein. Es handelt sich um Modellrechnungen. Tatsächliche Mieteinnahmen hängen von der konkreten Immobilie und den Verträgen ab.</p></details>
+ <details><summary>Spare ich mit einer Denkmalimmobilie automatisch Steuern?</summary><p>Nein. Die steuerlichen Vorteile hängen von der Immobilie, den begünstigten Kosten und Ihrer persönlichen steuerlichen Situation ab.</p></details>
+ <details><summary>Kann ich meine Immobilie nach zehn Jahren steuerfrei verkaufen?</summary><p>Bei privat gehaltenen Immobilien kann ein Verkauf nach Ablauf von mehr als zehn Jahren grundsätzlich einkommensteuerfrei sein. Es gibt Ausnahmen, die individuell geprüft werden müssen.</p></details>
+ <details><summary>Muss ich vorab eine bestimmte Immobilie auswählen?</summary><p>Nein. Die Vorauswahl erfolgt nach einem persönlichen Gespräch und einer Prüfung der finanziellen und steuerlichen Möglichkeiten.</p></details>
+</div></section>
+<section class="section contact" id="kontakt"><div class="container contact-grid"><div><div class="eyebrow">Persönlicher Kontakt</div><h2>Ein gutes Investment beginnt mit einem guten Gespräch.</h2><p>Sie können Ihre bevorzugten Gesprächszeiten im Eignungscheck auswählen. Alternativ senden Sie mir direkt eine WhatsApp-Nachricht oder eine E-Mail.</p><a class="btn" href="#check">Kapitalanlage-Check starten →</a></div><div class="contact-box"><h3>Mathias Radseck</h3><p>Freier und selbstständiger Immobilienvermittler<br>Spezialisiert auf Denkmal- und Seniorenimmobilien</p><a href="tel:+4917632201713">0176 32201713</a><a href="mailto:mathias.radseck@kapitalanlage-check.de">mathias.radseck@kapitalanlage-check.de</a><a href="https://www.linkedin.com/in/mathiasradseck/" target="_blank" rel="noopener noreferrer">LinkedIn-Profil ↗</a><p>Schackstr. 18 · 29221 Celle</p><a class="btn whatsapp" href="https://wa.me/4917632201713?text=Guten%20Tag%20Herr%20Radseck%2C%20ich%20m%C3%B6chte%20einen%20Telefontermin%20zum%20Thema%20Kapitalanlageimmobilien%20anfragen." target="_blank" rel="noopener noreferrer">Termin per WhatsApp anfragen ↗</a></div></div></section>
 </main>
-
-<footer>
-  <div class="container footer-inner">
-    <div>
-      <div class="logo">KAPITALANLAGE<span>CHECK</span></div>
-      <small>© <span id="year"></span> Kapitalanlage-Check · Mathias Radseck</small>
-    </div>
-
-    <div class="footer-links">
-      <a href="#start">Startseite</a>
-      <a href="https://www.linkedin.com/in/mathiasradseck/"
-         target="_blank"
-         rel="noopener noreferrer">LinkedIn</a>
-      <a href="#kontakt">Kontakt</a>
-    </div>
-  </div>
-
-  <div class="container" style="margin-top:30px">
-    <small>
-      *Angabe zu fast 500 begleiteten Kunden gemäß
-      persönlicher Erfahrung des Ansprechpartners;
-      vor Veröffentlichung zu bestätigen.
-      Alle Rechenbeispiele sind unverbindlich.
-      Es besteht keine Garantie für Mieterträge,
-      Wertsteigerungen oder steuerliche Vorteile.
-      Diese Webseite ist eine noch nicht veröffentlichungsreife
-      Designvorschau. Impressum und Datenschutzerklärung
-      müssen vor dem öffentlichen Werbeeinsatz ergänzt werden.
-    </small>
-  </div>
-</footer>
-
+<footer><div class="container"><div><div class="brand">KAPITALANLAGE<b>CHECK</b></div><p>© <span id="year"></span> Mathias Radseck. Persönliche Begleitung bei Denkmal- und Seniorenimmobilien.</p></div><p><b>Hinweis:</b> Diese Fassung ist eine Designvorschau und noch nicht zur öffentlichen Kundengewinnung freigegeben. Vor Veröffentlichung sind insbesondere Impressum, Datenschutzerklärung, erlaubnisrechtliche Angaben (§ 34c GewO), Bildrechte sowie die geschützte Übertragung der Selbstauskunft zu vervollständigen.</p></div></footer>
 <script>
-"use strict";
-
-const euro = new Intl.NumberFormat("de-DE", {
-  style: "currency",
-  currency: "EUR",
-  maximumFractionDigits: 0
-});
-
-const percent = new Intl.NumberFormat("de-DE", {
-  style: "decimal",
-  minimumFractionDigits: 2,
-  maximumFractionDigits: 2
-});
-
-function calculate() {
-  const price = Number(document.getElementById("price").value);
-  const rent = Number(document.getElementById("rent").value);
-  const equity = Number(document.getElementById("equity").value);
-  const growth = Number(document.getElementById("growth").value);
-
-  if (
-    !Number.isFinite(price) ||
-    !Number.isFinite(rent) ||
-    !Number.isFinite(equity) ||
-    !Number.isFinite(growth) ||
-    price <= 0 ||
-    rent < 0 ||
-    equity < 0 ||
-    growth < -20 ||
-    growth > 20
-  ) {
-    alert("Bitte gültige Werte eingeben.");
-    return;
-  }
-
-  const annualRent = rent * 12;
-  const rentalYield = annualRent / price * 100;
-  const futureValue = price * Math.pow(1 + growth / 100, 10);
-  const increase = futureValue - price;
-  const totalRent = annualRent * 10;
-
-  document.getElementById("annualRent").textContent =
-    euro.format(annualRent);
-
-  document.getElementById("yieldResult").textContent =
-    percent.format(rentalYield) + " %";
-
-  document.getElementById("futureValue").textContent =
-    euro.format(futureValue);
-
-  document.getElementById("increase").textContent =
-    euro.format(increase);
-
-  document.getElementById("totalRent").textContent =
-    euro.format(totalRent);
+'use strict';
+const $=id=>document.getElementById(id);
+$('year').textContent=new Date().getFullYear();
+const menu=$('menuBtn'),links=$('navlinks');
+menu.addEventListener('click',()=>{const shown=links.classList.toggle('open');menu.setAttribute('aria-expanded',String(shown));});
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');menu.setAttribute('aria-expanded','false');}));
+const eur=x=>new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(x);
+function calculate(){
+  const price=Number($('price').value),yieldRate=Number($('yield').value),rate=Number($('interest').value),repayment=Number($('repayment').value),cost=Number($('expenses').value);
+  if(![price,yieldRate,rate,repayment,cost].every(Number.isFinite)||price<50000||price>2000000||rate<0||rate>15||repayment<0||repayment>15||cost<0||cost>100000)return;
+  const rent=price*yieldRate/1200,monthlyLoan=price*(rate+repayment)/1200,r=rate/1200;
+  const n=120,compound=Math.pow(1+r,n);
+  const debt=Math.max(0,r===0?price-monthlyLoan*n:price*compound-monthlyLoan*(compound-1)/r);
+  const future=price*Math.pow(1.0565,10);
+  $('outRent').textContent=eur(rent);$('outRate').textContent=eur(monthlyLoan);$('outOwn').textContent=eur(monthlyLoan+cost/12-rent);$('outCosts').textContent=eur(price*.07);$('outValue').textContent=eur(future);$('outDebt').textContent=eur(debt);$('outEquity').textContent=eur(future-debt);
+  [[4,'4'],[4.5,'45'],[5,'5']].forEach(([y,key])=>{const a=price*y/100;$('a'+key).textContent=eur(a);$('m'+key).textContent=eur(a/12);$('t'+key).textContent=eur(a*10);});
 }
-
-document.getElementById("year").textContent =
-  new Date().getFullYear();
-
-calculate();
+['price','yield','interest','repayment','expenses'].forEach(id=>$(id).addEventListener('input',calculate));calculate();
+const form=$('checkForm'),steps=Array.from(form.querySelectorAll('.step'));let current=0;
+function showStep(){steps.forEach((s,i)=>s.classList.toggle('active',i===current));$('stepText').textContent=`Schritt ${current+1} von ${steps.length}`;$('progressBar').style.width=((current+1)/steps.length*100)+'%';$('back').style.visibility=current===0?'hidden':'visible';$('next').textContent=current===steps.length-1?'Ergebnis ansehen →':'Weiter →';$('formError').textContent='';}
+function validStep(){const step=steps[current];const radios=[...step.querySelectorAll('input[type="radio"][required]')].map(x=>x.name);for(const name of radios){if(!step.querySelector(`input[name="${name}"]:checked`)){$('formError').textContent='Bitte wählen Sie eine Antwort aus.';return false;}}for(const input of step.querySelectorAll('input:not([type="radio"]):not([type="checkbox"]),select,textarea')){if(!input.checkValidity()){$('formError').textContent='Bitte füllen Sie die Pflichtfelder korrekt aus.';input.focus();return false;}}return true;}
+$('next').addEventListener('click',()=>{if(!validStep())return;if(current<steps.length-1){current++;showStep();$('wizard').scrollIntoView({behavior:'smooth',block:'start'});}else showResult();});
+$('back').addEventListener('click',()=>{current=Math.max(0,current-1);showStep();});form.addEventListener('submit',e=>e.preventDefault());
+function showResult(){const d=new FormData(form),goal=d.get('goal'),kind=d.get('kind');let t='Für Ihre Ziele könnten sowohl Denkmal- als auch Seniorenimmobilien ein sinnvoller Ausgangspunkt sein. Entscheidend sind Ihre persönlichen Zahlen und konkrete Objektangebote.';if(goal==='Steuervorteile'||kind==='Denkmalimmobilie')t='Mit Ihrem Schwerpunkt auf steuerlichen Gestaltungsmöglichkeiten kann sich die nähere Prüfung einer Denkmalimmobilie anbieten. Die persönliche Steuerwirkung muss individuell berechnet werden.';else if(goal==='Mieteinnahmen'||kind==='Seniorenimmobilie')t='Mit Ihrem Schwerpunkt auf laufenden Einnahmen könnte die Prüfung einer Senioren- oder Pflegeimmobilie interessant sein. Miete, Kosten und Betreiberbonität müssen dabei sorgfältig geprüft werden.';$('resultText').textContent=t;$('goalText').textContent=goal;$('budgetText').textContent=d.get('ownBudget');$('formArea').hidden=true;$('result').classList.add('visible');$('wizard').scrollIntoView({behavior:'smooth',block:'start'});}
+function appointmentMessage(){const days=[...document.querySelectorAll('#days input:checked')].map(x=>x.value).join(', ')||'nach Absprache';const times=[...document.querySelectorAll('#times input:checked')].map(x=>x.value).join(', ')||'nach Absprache';const name=[$('first').value.trim(),$('last').value.trim()].join(' ').trim();const notes=$('notes').value.trim().slice(0,280);return `Guten Tag Herr Radseck, ich möchte gern einen Telefontermin vereinbaren.\nName: ${name}\nMögliche Tage: ${days}\nUhrzeiten: ${times}${notes?'\nHinweis: '+notes:''}\nVielen Dank.`;}
+$('whatsApp').addEventListener('click',()=>window.open('https://wa.me/4917632201713?text='+encodeURIComponent(appointmentMessage()),'_blank','noopener,noreferrer'));
+$('mail').addEventListener('click',()=>location.href='mailto:mathias.radseck@kapitalanlage-check.de?subject='+encodeURIComponent('Terminanfrage Kapitalanlage-Check')+'&body='+encodeURIComponent(appointmentMessage()));
+$('restart').addEventListener('click',()=>{form.reset();document.querySelectorAll('#days input,#times input').forEach(x=>x.checked=false);$('formArea').hidden=false;$('result').classList.remove('visible');current=0;showStep();$('wizard').scrollIntoView({behavior:'smooth',block:'start'});});showStep();
 </script>
-
 </body>
 </html>
