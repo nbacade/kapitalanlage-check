@@ -46,6 +46,14 @@ async function visit(view,browser,files){
   const price=await page.locator('#priceView').innerText(),rent=await page.locator('#rentView').innerText(),area=await page.locator('#areaView').innerText();
   assert.match(price,/370\.000/,'Kaufpreis');assert.match(rent,/680/,'Miete');assert.match(area,/42,5/,'Fläche');
   record(mark+' 370.000 Kaufpreis / 680 Miete / 42,50 qm');
+  await page.locator('#presentButton').click();
+  await page.waitForSelector('body.presenting',{timeout:10000});
+  record(mark+' Hauptbutton öffnet die Verkaufspräsentation');
+  await page.locator('#exitPresentation').click();
+  await page.waitForFunction(()=>!document.body.classList.contains('presenting'),null,{timeout:7000});
+  const countSummary=await page.locator('#quickDocSummary').innerText();
+  assert.match(countSummary,/1 Exposé\(s\).*1 Verkaufsdatenblatt/,'Dokumentarten richtig benannt');
+  record(mark+' Dokumentenzählung '+countSummary);
   const fileCount=await page.locator('#uploadExistingTitle').innerText();
   assert.match(fileCount,/2 bereits/,'Exposé und Verkaufsdatenblatt gespeichert');
   const costs=await page.locator('#sourceExpensesTable').textContent();
@@ -83,6 +91,9 @@ async function visit(view,browser,files){
   assert(images>0,'Bilder in der Kundenpräsentation');
   const financials=await page.locator('#financeResults').innerText();
   assert.match(financials,/370\.000/,'Finanzierungsrechner verwendet 370000');
+  const factsCols=await page.locator('#facts').evaluate(e=>getComputedStyle(e).gridTemplateColumns);
+  record(mark+' Fakten-Raster '+factsCols);
+  if(view.name==='mobile')assert.equal(factsCols.trim().split(/\s+/).length,1,'Mobil eine breite Spalte für Objektdetails');
   const modelAdmin=await page.locator('[data-live-fin="admin"]').inputValue();
   assert(!/99999/.test(modelAdmin),mark+' admin input is rounded');
   record(mark+' Hausverwaltung im Rechner '+modelAdmin);
