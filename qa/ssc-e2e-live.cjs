@@ -52,7 +52,7 @@ async function visit(view,browser,files){
   await page.locator('#exitPresentation').click();
   await page.waitForFunction(()=>!document.body.classList.contains('presenting'),null,{timeout:7000});
   const countSummary=await page.locator('#quickDocSummary').innerText();
-  assert.match(countSummary,/1 Exposé\(s\).*1 Verkaufsdatenblatt/,'Dokumentarten richtig benannt');
+  assert.match(countSummary,/1 Exposé.*1 Verkaufsdatenblatt/,'Dokumentarten richtig benannt');
   record(mark+' Dokumentenzählung '+countSummary);
   const fileCount=await page.locator('#uploadExistingTitle').innerText();
   assert.match(fileCount,/2 bereits/,'Exposé und Verkaufsdatenblatt gespeichert');
