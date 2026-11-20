@@ -1,0 +1,33 @@
+name: Temporärer Live-Test SteuerSparCheck Beraterbereich
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/ssc-berater-live-qa.yml'
+      - 'qa/ssc-e2e-live.cjs'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  live-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Browser und PDF-Erzeugung installieren
+        run: |
+          npm install --no-save --no-package-lock playwright@1.56.1 pdfkit@0.17.2
+          npx playwright install chromium --with-deps
+      - name: LIVE-Test der veröffentlichten Cloudflare-Seite
+        run: node qa/ssc-e2e-live.cjs
+      - name: Prüfergebnis und Desktop-/Mobil-Screenshots bereitstellen
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: steuersparcheck-live-test
+          path: qa-live-artifacts/
+          retention-days: 7
+          if-no-files-found: warn
