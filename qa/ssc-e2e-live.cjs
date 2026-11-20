@@ -83,7 +83,16 @@ async function visit(view,browser,files){
   assert(images>0,'Bilder in der Kundenpräsentation');
   const financials=await page.locator('#financeResults').innerText();
   assert.match(financials,/370\.000/,'Finanzierungsrechner verwendet 370000');
+  const modelAdmin=await page.locator('[data-live-fin="admin"]').inputValue();
+  assert(!/99999/.test(modelAdmin),mark+' admin input is rounded');
+  record(mark+' Hausverwaltung im Rechner '+modelAdmin);
+  const displayFacts=await page.locator('#facts').textContent();
+  assert.match(displayFacts,/Weitere laufende Kosten \/ Monat/,'Weitere Kosten richtig benannt');
   const overflow=await page.evaluate(()=>({scrollWidth:document.documentElement.scrollWidth,innerWidth:innerWidth}));
+  if(overflow.scrollWidth>overflow.innerWidth+8){
+    const offenders=await page.evaluate(()=>[...document.querySelectorAll('body *')].map(e=>({name:e.tagName,cls:String(e.className||'').slice(0,70),id:e.id,scroll:e.scrollWidth,right:Math.round(e.getBoundingClientRect().right)})).filter(x=>x.right>innerWidth+5).sort((a,b)=>b.right-a.right).slice(0,12));
+    record(mark+' OVERFLOW ELEMENTS '+JSON.stringify(offenders));
+  }
   record(mark+' Galerie '+images+' Bilder, viewport '+JSON.stringify(overflow));
   assert(overflow.scrollWidth<=overflow.innerWidth+8,mark+' ohne horizontales Überlaufen');
   await photograph('praesentation');
