@@ -49,6 +49,9 @@ async function visit(view,browser,files){
   const fileCount=await page.locator('#uploadExistingTitle').innerText();
   assert.match(fileCount,/2 bereits/,'Exposé und Verkaufsdatenblatt gespeichert');
   const costs=await page.locator('#sourceExpensesTable').innerText();
+  record(mark+' KOSTEN '+JSON.stringify(costs).slice(0,1500));
+  const detail=await page.evaluate(()=>{const o=typeof current==='function'?current():null;return {costs:o?.sourceCostBreakdown||{},sourceFiles:typeof related==='function'&&o?related(o.id).map(d=>({name:d.name,role:d.role,pages:d.pages,txt:(d.text||'').slice(0,1600)})):[]};});
+  record(mark+' INTAKE '+JSON.stringify(detail).slice(0,4600));
   assert.match(costs,/24\.050/, 'Grunderwerbsteuer');assert.match(costs,/2\.590/,'Finanzierungsnotar');
   assert.match(costs,/34\.825/,'Gesamte einmalige Kosten');
   record(mark+' Kosten laut Verkaufsdatenblatt korrekt');
